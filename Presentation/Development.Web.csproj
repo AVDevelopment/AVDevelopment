@@ -109,6 +109,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\BaseSystem.sql" />
+    <Content Include="App_Data\Script1_DBCreation.sql" />
     <Content Include="App_Readme\Elmah.txt" />
     <Content Include="bower_components\Bootbox\bootbox.js" />
     <Content Include="bower_components\Bootstrap-notify\css\bootstrap-notify.css" />
@@ -1225,7 +1227,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
