@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AV.Development.Dal.Metadata.Model.AttributeDao,AV.Development.Dal" table="`MD_Attribute`" lazy="true">
+    <id name="Id" column="ID">
+      <generator class="assigned">
+        <param name="property">Id</param>
+      </generator>
+    </id>
+    <property type="string" not-null="true"  name="Caption" column="`Caption`"/>
+    <property type="string"  name="Description" column="`Description`"/>
+    <property type="int" not-null="true" name="AttributeTypeID" column="`AttributeTypeID`"/>
+    <property type="Boolean" not-null="true" name="IsSystemDefined" column="`IsSystemDefined`"/>
+    <property type="Boolean" not-null="true" name="IsSpecial" column="`IsSpecial`"/>
+  </class>
+</hibernate-mapping>

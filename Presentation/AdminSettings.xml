@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppSettings>
+  <Version>
+    <ActiveVersion value="3" />
+    <TotalVersionCount value="8" />
+    <WorkingVersion value="8" />
+  </Version>
+  <ApplicationURL>http://demo.rc1.brandsystems.com/</ApplicationURL>
+  <MailConfig>
+    <AdminEmailID>viniston.viniston@gmail.com</AdminEmailID>
+    <SenderConfig>
+      <DevelopmentMailID>myprivacy2015@gmail.com</DevelopmentMailID>
+      <DevelopmentMailPwd>sivaji2015</DevelopmentMailPwd>
+      <MailHost>smtp.gmail.com</MailHost>
+      <MailDisplayName>myprivacy2015</MailDisplayName>
+      <NotificationMail />
+    </SenderConfig>
+  </MailConfig>
+
+  <DefaultLanguage>1</DefaultLanguage>
+
+  <LogoSettings>
+    <Title>Title</Title>
+    <HomeUrl />
+    <logo>assets/img/Temp/e220f3d4-2eff-46f6-90ee-c10364983c76.png</logo>
+  </LogoSettings>
+
+</AppSettings>

@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Secret CMS viniston fernando " />
+    <meta name="keywords" content="Secret CMS " />
+    <meta name="author" content="SecretCMS" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <title>Login</title>
+    <!-- Bootstrap core CSS -->
+    <link href="loginui/css/bootstrap.css" rel="stylesheet" />
+    <link href="bower_components/Bootstrap-notify/css/bootstrap-notify.css" rel="stylesheet" />
+    <link href="loginui/css/bootstrap-notify.css" rel="stylesheet" />
+    <!-- Demo CSS -->
+    <link href="loginui/css/demo.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="loginui/css/login-theme-3.css" rel="stylesheet" id="logincsslink">
+
+    <!--    <link href="loginui/css/animate-custom.css" rel="stylesheet">-->
+    <link href="loginui/css/jquery.toast.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        #login-block {
+            padding-top: 0;
+        }
+
+        .btn.btn-login,
+        .btn.btn-reset {
+            width: 252px !important;
+        }
+    </style>
+</head>
+<body class="fade-in">
+
+    <!-- start Login box -->
+    <div class="container" id="login-block">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+                <div class="page-icon-shadow animated bounceInDown"></div>
+                <div class="login-box clearfix animated flipInY">
+                    <div class="page-icon animated bounceInDown">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                    <div class="login-logo">
+                        <a href="#">
+                            <img src="img/login-logo.png" alt="Company Logo" />
+                        </a>
+                    </div>
+                    <hr />
+                    <div class="login-form">
+                        <!-- Start Error box -->
+                        <div class="alert alert-danger hide">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <h4>Error!</h4>
+                            Your Error Message goes here
+
+                        </div>
+
+                        <!-- End Error box -->
+                        <form action="#" method="get">
+                            <input type="text" id="username" placeholder="User name" class="input-field" required />
+                            <input type="password" id="password" placeholder="Password" class="input-field" required />
+                            <label class="checkbox">
+                                <input type="checkbox" value="option1" id="cbRememberMe">
+                                Remember me
+
+                            </label>
+                            <button id="loginbtn" type="button" onclick="loginUser(this);" class="btn btn-login">Login</button>
+                        </form>
+                        <div class="login-links">
+                            <a href="forgot-password.html">
+                                Forgot password?
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- End Login box -->
+    <footer class="container">
+        <p id="footer-text"><small>Copyright &copy; 2015 <a href="javascript:;">Company Name Pvt. Ltd.</a></small></p>
+    </footer>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-cookie/jquery.cookie.js"></script>
+    <script src="loginui/js/bootstrap.min.js"></script>
+    <script src="loginui/js/placeholder-shim.min.js"></script>
+    <script src="loginui/js/bootstrap-notify.js"></script>
+    <script src="loginui/js/jquery.toast.js"></script>
+    <!--    <script src="loginui/js/notify.min.js"></script>-->
+    <!--<script src="loginui/js/custom.js"></script>-->
+
+    <script type="text/javascript">
+
+        function NotifySuccess(msg) {
+            $.toast({ text: msg, showHideTransition: 'slide', heading: 'Success', icon: 'success', allowToastClose: false, hideAfter: 3000, stack: 5, textAlign: 'left', position: 'top-right' });
+        }
+        function NotifyError(msg) {
+            $.toast({ text: msg, showHideTransition: 'slide', heading: 'Error', icon: 'error', allowToastClose: false, hideAfter: 3000, stack: 5, textAlign: 'left', position: 'top-right' });
+        }
+
+
+        function ShowCurrentTime() {
+            $.ajax({
+                type: "GET",
+                url: "api/Common/GetCurrentTime/1",
+                contentType: "application/json",
+                success: OnSuccess,
+                failure: function (response) {
+                    alert(response.d);
+                }
+            });
+        }
+        function OnSuccess(response) {
+            console.log(response.Response);
+        }
+
+
+        $(document).ready(function () {
+            ShowCurrentTime();
+        });
+
+        jQuery.support.cors = true;
+
+
+    </script>
+</body>
+</html>

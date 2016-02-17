@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AV.Development.Dal.Metadata.Model.MetadataVersionDao,AV.Development.Dal" table="`MD_MetadataVersion`" lazy="true">
+    <id name="ID" column="`ID`" type="int">
+       <generator class="assigned">
+        <param name="property">Id</param>
+      </generator>
+    </id>
+    <property type="string" length="250" name="Name" column="`Name`"/>
+    <property type="string" length="500" name="Description" column="`Description`"/>
+    <property type="int" name="State" column="`State`"/>
+    <property type="DateTime" not-null="false" name="StartDate" column="`StartDate`"/>
+    <property type="DateTime" not-null="false" name="EndDate" column="`EndDate`"/>
+  </class>
+</hibernate-mapping>

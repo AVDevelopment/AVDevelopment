@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="AV.Development.Dal.User.Model.UserDao,AV.Development.Dal" table="UM_User" lazy="true">
+		<id name="Id" column="ID" type="int">
+			<generator class="native"/>
+		</id>
+		<property type="string" length="50" name="FirstName" column="FirstName"/>
+		<property type="string" length="50" name="LastName" column="LastName"/>
+		<property type="string"  length="250" name="UserName" column="UserName"/>
+		<property name="Password" type="BinaryBlob">
+			<column name="Password" sql-type="varbinary(max)"/>
+		</property>
+		<property type="string" name="SaltPassword" column="PasswordSalt"/>
+		<property type="string" length="250" name="Email" column="Email"/>
+		<property type="string" length="250" name="Image" column="Image"/>
+    <property type="Boolean" name="Gender" column="Gender"/>
+    <property type="Boolean" name="IsActive" column="Isactive"/>
+    <property type="Boolean" name="password_reset" column="password_reset"/>
+    <property type="DateTime"  name="LastLogin" column="last_login"/>
+    <property type="DateTime"  name="RegistrationDate" column="registration_date"/>
+    
+  </class>
+</hibernate-mapping>

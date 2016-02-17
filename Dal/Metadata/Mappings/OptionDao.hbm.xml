@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AV.Development.Dal.Metadata.Model.OptionDao,AV.Development.Dal" table="`MD_Option`" lazy="true">
+    <id name="Id" column="ID">
+      <generator class="assigned">
+        <param name="property">Id</param>
+      </generator>
+    </id>
+    <property type="string" not-null="true" length="500" name="Caption" column="`Caption`" />
+    <property type="int"  name="AttributeID" column="`AttributeID`" />
+    <property type="int"  name="SortOrder" column="`SortOrder`" />
+    
+  </class>
+</hibernate-mapping>

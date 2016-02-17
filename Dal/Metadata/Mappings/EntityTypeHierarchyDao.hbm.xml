@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="AV.Development.Dal" namespace="AV.Development.Dal">
+	<class name="AV.Development.Dal.Metadata.Model.EntityTypeHierarchyDao,AV.Development.Dal" table="`MD_EntityType_Hierarchy`" lazy="true">
+		<id name="Id" column="`ID`" type="int">
+			<generator class="assigned"/>
+		</id>
+		<property type="int" not-null="true" name="ParentActivityTypeID" column="`ParentActivityTypeID`"/>
+		<property type="int" not-null="true" name="ChildActivityTypeID" column="`ChildActivityTypeID`"/>
+		<property name="SortOrder" type="int">
+			<column name="SortOrder" sql-type="INTEGER"/>
+		</property>
+	</class>
+</hibernate-mapping>

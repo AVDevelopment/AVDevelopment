@@ -1,0 +1,744 @@
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (45.2739) -------
+--------------core function call start -------
+--------------core function call end  (72.3485) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (10.4549) -------
+--------------core function call start -------
+--------------core function call end  (43.4701) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.68) -------
+--------------core function call start -------
+--------------core function call end  (39.7514) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (17.2211) -------
+--------------core function call start -------
+--------------core function call end  (51.0818) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (12.6469) -------
+--------------core function call start -------
+--------------core function call end  (109.0303) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (10.1261) -------
+--------------core function call start -------
+--------------core function call end  (44.4565) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (38.0861) -------
+--------------core function call start -------
+--------------core function call end  (225.0867) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.3494) -------
+--------------core function call start -------
+--------------core function call end  (50.9975) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (14.1663) -------
+--------------core function call start -------
+--------------core function call end  (51.7824) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.1501) -------
+--------------core function call start -------
+--------------core function call end  (135.0279) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (10.6863) -------
+--------------core function call start -------
+--------------core function call end  (41.7038) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (9.3811) -------
+--------------core function call start -------
+--------------core function call end  (37.8982) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (18.4131) -------
+--------------core function call start -------
+--------------core function call end  (62.1468) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (81.4267) -------
+--------------core function call start -------
+--------------core function call end  (223.8703) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.5645) -------
+--------------core function call start -------
+--------------core function call end  (47.6955) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (10.6247) -------
+--------------core function call start -------
+--------------core function call end  (44.797) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (76.4653) -------
+--------------core function call start -------
+--------------core function call end  (127.8012) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (76.5024) -------
+--------------core function call start -------
+--------------core function call end  (185.4051) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (58.8275) -------
+--------------core function call start -------
+--------------core function call end  (227.4744) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (10.1039) -------
+--------------core function call start -------
+--------------core function call end  (41.9896) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (12.5808) -------
+--------------core function call start -------
+--------------core function call end  (35.3316) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (77.2764) -------
+--------------core function call start -------
+--------------core function call end  (219.8953) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (18.8791) -------
+--------------core function call start -------
+--------------core function call end  (75.0061) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (34.1478) -------
+--------------core function call start -------
+--------------core function call end  (38.2754) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.0378) -------
+--------------core function call start -------
+--------------core function call end  (38.1694) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (54.1456) -------
+--------------core function call start -------
+--------------core function call end  (198.2513) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (21.5511) -------
+--------------core function call start -------
+--------------core function call end  (41.1929) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (13.1206) -------
+--------------core function call start -------
+--------------core function call end  (35.0753) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (19.8069) -------
+--------------core function call start -------
+--------------core function call end  (475.0759) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (10.6885) -------
+--------------core function call start -------
+--------------core function call end  (43.9407) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (27.2654) -------
+--------------core function call start -------
+--------------core function call end  (207.9027) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (82.6184) -------
+--------------core function call start -------
+--------------core function call end  (128.4803) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (38.5074) -------
+--------------core function call start -------
+--------------core function call end  (64.018) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (84.7737) -------
+--------------core function call start -------
+--------------core function call end  (395.8672) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (84.9933) -------
+--------------core function call start -------
+--------------core function call end  (412.6072) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (98.1202) -------
+--------------core function call start -------
+--------------core function call end  (247.9029) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (83.1863) -------
+--------------core function call start -------
+--------------core function call end  (499.4995) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (64.0139) -------
+--------------core function call start -------
+--------------core function call end  (63.056) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (34.6733) -------
+--------------core function call start -------
+--------------core function call end  (212.8813) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (97.1537) -------
+--------------core function call start -------
+--------------core function call end  (702.9501) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (28.8853) -------
+--------------core function call start -------
+--------------core function call end  (894.4487) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (477.4435) -------
+--------------core function call start -------
+--------------core function call end  (1015.4924) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (107.7151) -------
+--------------core function call start -------
+--------------core function call end  (205.6242) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (37.1067) -------
+--------------core function call start -------
+--------------core function call end  (213.5856) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (453.3533) -------
+--------------core function call start -------
+--------------core function call end  (431.7142) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (33.9844) -------
+--------------core function call start -------
+--------------core function call end  (109.2925) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (46.0747) -------
+--------------core function call start -------
+--------------core function call end  (377.6454) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (29.144) -------
+--------------core function call start -------
+--------------core function call end  (209.885) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (95.2919) -------
+--------------core function call start -------
+--------------core function call end  (79.0447) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (12.7709) -------
+--------------core function call start -------
+--------------core function call end  (47.1208) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (25.6921) -------
+--------------core function call start -------
+--------------core function call end  (102.8746) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.2084) -------
+--------------core function call start -------
+--------------core function call end  (44.3541) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (90.1458) -------
+--------------core function call start -------
+--------------core function call end  (132.1817) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (85.8982) -------
+--------------core function call start -------
+--------------core function call end  (432.1102) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (13.7862) -------
+--------------core function call start -------
+--------------core function call end  (43.1821) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (9.8642) -------
+--------------core function call start -------
+--------------core function call end  (46.5842) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (242.2613) -------
+--------------core function call start -------
+--------------core function call end  (172.3213) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (206.7836) -------
+--------------core function call start -------
+--------------core function call end  (300.6853) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (196.9696) -------
+--------------core function call start -------
+--------------core function call end  (260.4876) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (10.5843) -------
+--------------core function call start -------
+--------------core function call end  (48.7177) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (96.07) -------
+--------------core function call start -------
+--------------core function call end  (136.1838) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (96.9205) -------
+--------------core function call start -------
+--------------core function call end  (358.439) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (51.7009) -------
+--------------core function call start -------
+--------------core function call end  (367.0587) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (83.6188) -------
+--------------core function call start -------
+--------------core function call end  (438.7857) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (72.3388) -------
+--------------core function call start -------
+--------------core function call end  (90.4764) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (72.4638) -------
+--------------core function call start -------
+--------------core function call end  (150.4945) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (31.7418) -------
+--------------core function call start -------
+--------------core function call end  (152.5882) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (39.7954) -------
+--------------core function call start -------
+--------------core function call end  (162.3429) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (14.0317) -------
+--------------core function call start -------
+--------------core function call end  (90.7699) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (121.0779) -------
+--------------core function call start -------
+--------------core function call end  (13392.5054) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (13.1246) -------
+--------------core function call start -------
+--------------core function call end  (15057.0141) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (3167.4492) -------
+--------------core function call start -------
+--------------core function call end  (11565.2516) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.4756) -------
+--------------core function call start -------
+--------------core function call end  (90.1512) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (12.4498) -------
+--------------core function call start -------
+--------------core function call end  (44.25) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (35.2625) -------
+--------------core function call start -------
+--------------core function call end  (223.2931) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (45.5851) -------
+--------------core function call start -------
+--------------core function call end  (54.2076) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (16.8106) -------
+--------------core function call start -------
+--------------core function call end  (45.6784) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.1445) -------
+--------------core function call start -------
+--------------core function call end  (42.6771) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.683) -------
+--------------core function call start -------
+--------------core function call end  (48.7458) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (13.2853) -------
+--------------core function call start -------
+--------------core function call end  (54.5287) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (31.0593) -------
+--------------core function call start -------
+--------------core function call end  (291.7204) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (34.2643) -------
+--------------core function call start -------
+--------------core function call end  (355.8557) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (12.1105) -------
+--------------core function call start -------
+--------------core function call end  (42.9769) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (28.9674) -------
+--------------core function call start -------
+--------------core function call end  (294.2733) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (222.1265) -------
+--------------core function call start -------
+--------------core function call end  (113.6972) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (17.3572) -------
+--------------core function call start -------
+--------------core function call end  (36.0818) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (101.2927) -------
+--------------core function call start -------
+--------------core function call end  (284.8207) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (17.9174) -------
+--------------core function call start -------
+--------------core function call end  (111.0147) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.938) -------
+--------------core function call start -------
+--------------core function call end  (49.5714) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (10.3013) -------
+--------------core function call start -------
+--------------core function call end  (47.6765) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (10.703) -------
+--------------core function call start -------
+--------------core function call end  (49.0737) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (147.7415) -------
+--------------core function call start -------
+--------------core function call end  (225.6458) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (71.3289) -------
+--------------core function call start -------
+--------------core function call end  (289.951) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (71.3379) -------
+--------------core function call start -------
+--------------core function call end  (297.9666) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (10.6183) -------
+--------------core function call start -------
+--------------core function call end  (44.1318) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (9.9218) -------
+--------------core function call start -------
+--------------core function call end  (45.4424) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (8.8054) -------
+--------------core function call start -------
+--------------core function call end  (36.387) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.6065) -------
+--------------core function call start -------
+--------------core function call end  (379.9003) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.8008) -------
+--------------core function call start -------
+--------------core function call end  (92.9745) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (18.6226) -------
+--------------core function call start -------
+--------------core function call end  (49.2104) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (55.9462) -------
+--------------core function call start -------
+--------------core function call end  (857.8525) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (13.4447) -------
+--------------core function call start -------
+--------------core function call end  (44.1934) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (13.9112) -------
+--------------core function call start -------
+--------------core function call end  (74.4837) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (82.2058) -------
+--------------core function call start -------
+--------------core function call end  (471.2644) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (9.8457) -------
+--------------core function call start -------
+--------------core function call end  (51.1628) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (9.8334) -------
+--------------core function call start -------
+--------------core function call end  (43.9461) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.8664) -------
+--------------core function call start -------
+--------------core function call end  (93.864) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (17.436) -------
+--------------core function call start -------
+--------------core function call end  (52.2891) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (30.687) -------
+--------------core function call start -------
+--------------core function call end  (52.464) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (12.5104) -------
+--------------core function call start -------
+--------------core function call end  (46.0751) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.592) -------
+--------------core function call start -------
+--------------core function call end  (54.5875) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (17.0361) -------
+--------------core function call start -------
+--------------core function call end  (46.5923) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (20.358) -------
+--------------core function call start -------
+--------------core function call end  (46.4795) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (30.663) -------
+--------------core function call start -------
+--------------core function call end  (62.3355) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (13.6834) -------
+--------------core function call start -------
+--------------core function call end  (57.7754) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (13.293) -------
+--------------core function call start -------
+--------------core function call end  (51.6827) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (15.0711) -------
+--------------core function call start -------
+--------------core function call end  (50.0985) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (13.3401) -------
+--------------core function call start -------
+--------------core function call end  (48.0071) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.5639) -------
+--------------core function call start -------
+--------------core function call end  (58.0286) -------
+
+
+--------------service entity detail start ActivityRoot1 -------
+--------------service entity detail end ActivityRoot1 (6166.499) -------
+--------------core entity detail call start -------
+--------------core entity detail call end  (1105.9098) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (11.9647) -------
+--------------core function call start -------
+--------------core function call end  (44.7264) -------
+
+
+--------------service entity detail start ActivityRoot1 -------
+--------------service entity detail end ActivityRoot1 (4.1121) -------
+--------------core entity detail call start -------
+--------------core entity detail call end  (66.1941) -------
+
+
+--------------service root level start ActivityRoot1 -------
+--------------service root level end ActivityRoot1 (16.7612) -------
+--------------core function call start -------
+--------------core function call end  (49.5872) -------
+
+
+--------------service entity detail start ActivityRoot1 -------
+--------------service entity detail end ActivityRoot1 (3.9301) -------
+--------------core entity detail call start -------
+--------------core entity detail call end  (74.1621) -------
+
+

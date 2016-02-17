@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="AV.Development.Dal.Metadata.Model.EntityTypeDao,AV.Development.Dal" table="`MD_EntityType`" lazy="true">
+    <id name="Id" column="ID">
+      <generator class="assigned">
+        <param name="property">Id</param>
+      </generator>
+    </id>
+		<property type="string" not-null="true" length="500" name="Caption" column="`Caption`"/>
+		<property type="string" length="1073741823" name="Description" column="`Description`"/>
+		<property type="int" not-null="true" name="ModuleID" column="`ModuleID`"/>
+		<property type="int" not-null="true" name="Category" column="`Category`"/>
+    <property type="string" length="50" name="ShortDescription" column="`ShortDescription`"/>
+    <property type="string" length="400" name="ColorCode" column="`ColorCode`"/>
+    <property type="Boolean"  name="IsAssociate" column="`IsAssociate`"/>
+    <property type="Boolean" not-null="true" name="IsRootLevel" column="`IsRootLevel`"/>
+  </class>
+</hibernate-mapping>

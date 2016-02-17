@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AV.Development.Dal.Metadata.Model.TreeNodeDao,AV.Development.Dal" table="`MD_TreeNode`" lazy="true">
+    <id name="Id" column="ID">
+      <generator class="assigned">
+        <param name="property">Id</param>
+      </generator>
+    </id>
+    <property type="int" not-null="true" name="NodeID" column="`NodeID`" />
+    <property type="int" not-null="true" name="ParentNodeID" column="`ParentNodeID`" />
+    <property type="int" not-null="true" name="Level" column="`Level`" />    
+    <property type="string" not-null="true" length="500" name="KEY" column="`KEY`" />
+    <property type="int" not-null="true" name="AttributeID" column="`AttributeID`" />
+    <property type="string" not-null="true" length="500" name="Caption" column="`Caption`" />
+    <property type="int"  name="SortOrder" column="`SortOrder`" />
+    <property type="string"  name="ColorCode" column="`ColorCode`" />
+  </class>
+</hibernate-mapping>

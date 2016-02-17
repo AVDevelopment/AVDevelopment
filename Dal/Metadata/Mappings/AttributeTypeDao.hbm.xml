@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="AV.Development.Dal" namespace="AV.Development.Dal">
+	<class name="AV.Development.Dal.Metadata.Model.AttributeTypeDao,AV.Development.Dal" table="MD_AttributeType" lazy="true">
+    <id name="Id" column="ID">
+      <generator class="assigned">
+        <param name="property">Id</param>
+      </generator>
+    </id>
+		<property type="string" not-null="true"  name="Caption" column="Caption"/>
+		<property type="Boolean" not-null="true" name="IsSelectable" column="IsSelectable"/>
+		<property type="string" not-null="true" name="DataType" column="DataType"/>
+		<property type="string" not-null="true" name="SqlType" column="SqlType"/>
+		<property type="int" not-null="true" name="Length" column="Length"/>
+		<property type="Boolean" not-null="true" name="IsNullable" column="IsNullable"/>
+	</class>
+</hibernate-mapping>

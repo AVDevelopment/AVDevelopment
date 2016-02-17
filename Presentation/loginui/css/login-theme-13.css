@@ -1,0 +1,579 @@
+/* ==========================================================================
+   Login Box styles
+   ========================================================================== */
+  
+ 
+body{
+	background:#e6567a;
+	color: #333;
+}
+.alert{
+	margin: 20px auto;
+	width: 70%;
+}
+#login-block{	 
+	padding-top: 50px;
+	padding-bottom: 25px;
+}
+#login-block h3{
+	color: #333;
+	text-align: center;
+	font-size:1.5em;
+	 opacity: 0.8;
+	text-shadow: 2px 2px 2px #000;
+	font-weight: normal;
+ 
+}
+
+.login-box{
+	position: relative;
+	max-width:480px;	
+	background: #F8F8F8;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius:3px;
+	padding-bottom: 20px; 
+	margin-top: 80px; 
+	-webkit-box-shadow: 2px 2px 0 #d44465;
+	-moz-box-shadow: 2px 2px 0 #d44465;
+	box-shadow: 2px 2px 0 #d44465;
+}
+
+.login-logo{
+	 text-align: center;
+	 padding: 15px 0 10px;
+}
+
+.login-logo img{
+	border:0;
+	display: inline-block;
+}
+.login-form form p{
+	width:80%;
+	margin: 5px auto 10px;
+	text-align: center;
+}
+ 
+
+.login-box hr{
+	margin:10px auto 20px;
+	width:70%;
+	border-top: 1px solid #F0F0F0;
+	border-bottom: 1px solid #FFF;
+}
+/* page icon */
+.page-icon{
+	width: 100px;
+	height:100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	background: #d44465;
+	text-align: center; 
+	margin: -60px auto 0;
+	
+}
+.page-icon img{
+	vertical-align: middle; 
+	margin: 25px 0 0 0;
+	-moz-transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	opacity: 0.8;
+	width:48px;
+	height:48px;
+	 
+}
+.rotate-icon{
+	 -moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+	transform: rotate(45deg);
+}
+.login-box .page-icon{
+	-webkit-animation-delay: .8s;
+	-moz-animation-delay: .8s;
+	-o-animation-delay: .8s;
+	animation-delay: .8s;
+}
+/* Login Form */
+.login-form input{
+	display: block;
+	margin:0 auto 15px;
+	width:70%;
+	background: #FFF;
+	border:0;
+	color:#6c6c6c;
+	padding: 8px;
+	border-radius:2px;
+	border: 1px solid #EEE;
+}
+
+/* Login Button */
+.btn.btn-login {
+	width: 120px;
+	display:block;
+	margin: 20px auto 20px;
+	color: white;
+	text-transform:uppercase ;	 
+	background: #d44465; 
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	
+}
+.btn.btn-login:hover {	 
+	border:1px solid #FFF;
+	opacity: 0.8;
+} 
+.btn.btn-reset{
+	width: 180px;
+}
+.login-links{
+	text-align: center;
+}
+.login-links a{
+	color: #333; 
+	display:inline-block;
+	padding:5px; 
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+	opacity: 0.7;
+}
+.login-links a:hover{
+	 opacity: 1;
+	 text-decoration: none;
+}
+
+label.checkbox {
+	width: 70%;
+	display: block;
+	margin: 0 auto;
+}
+label.checkbox input{
+	width:14px;
+	margin: 4px 0 0;
+	padding: 0;
+	background: none;
+	border: 0;
+}
+#footer-text, #footer-text a{
+	text-align: center;
+	color:#FFF;
+	color: rgba(255, 255, 255, 0.6);
+	opacity: 1; 
+}
+
+/* Social Login */
+.social-login{
+	margin:10px 0 5px;
+}
+.social-login .btn{ 
+   text-align: center;
+    margin: 5px auto;
+    color:#FFF;
+    text-shadow: 1px 1px 1px #333;
+    width:95%;
+}
+ 
+.btn.btn-facebook {
+	border: 1px solid #2D4479; 
+	background: #385496;
+	background-size: 100%; 
+	font-size:12px;
+}
+.btn.btn-facebook:hover {
+	background: #4365B4;
+	 
+}
+
+.btn.btn-twitter {
+	border: 1px solid #2189FF; 
+	background: #4A9EFF; 
+	font-size:12px;
+}
+
+.btn.btn-twitter:hover {
+	background: #73B4FF; 
+}
+.fb-login, .twit-login{
+	-webkit-animation-delay: .9s;
+	-moz-animation-delay: .9s;
+	-o-animation-delay: .9s;
+	animation-delay: .9s;
+}
+
+
+
+/* For Long Shadow 
+=================================================================== */  
+
+.page-icon {
+	 
+	overflow: hidden; 
+	box-shadow: rgba(29, 38, 49, 0.02) 1px 1px, 
+	rgba(29, 38, 49, 0.02) 2px 2px, 
+	rgba(29, 38, 49, 0.02) 3px 3px, 
+	rgba(29, 38, 49, 0.02) 4px 4px, 
+	rgba(29, 38, 49, 0.02) 5px 5px, 
+	rgba(29, 38, 49, 0.02) 6px 6px, 
+	rgba(29, 38, 49, 0.02) 7px 7px, 
+	rgba(29, 38, 49, 0.02) 8px 8px, 
+	rgba(29, 38, 49, 0.02) 9px 9px, 
+	rgba(29, 38, 49, 0.02) 10px 10px, 
+	rgba(29, 38, 49, 0.02) 11px 11px, 
+	rgba(29, 38, 49, 0.02) 12px 12px, 
+	rgba(29, 38, 49, 0.02) 13px 13px, 
+	rgba(29, 38, 49, 0.02) 14px 14px, 
+	rgba(29, 38, 49, 0.02) 15px 15px, 
+	rgba(29, 38, 49, 0.02) 16px 16px, 
+	rgba(29, 38, 49, 0.02) 17px 17px, 
+	rgba(29, 38, 49, 0.02) 18px 18px, 
+	rgba(29, 38, 49, 0.02) 19px 19px, 
+	rgba(29, 38, 49, 0.02) 20px 20px,
+	rgba(29, 38, 49, 0.02) 21px 21px,
+	rgba(29, 38, 49, 0.02) 22px 22px,
+	rgba(29, 38, 49, 0.02) 23px 23px,
+	rgba(29, 38, 49, 0.02) 24px 24px,
+	rgba(29, 38, 49, 0.02) 25px 25px, 
+	rgba(29, 38, 49, 0.018) 26px 26px, 
+	rgba(29, 38, 49, 0.015) 27px 27px,
+	rgba(29, 38, 49, 0.015) 28px 28px, 
+	rgba(29, 38, 49, 0.014) 29px 29px, 
+	rgba(29, 38, 49, 0.014) 30px 30px, 
+	rgba(29, 38, 49, 0.012) 31px 31px, 
+	rgba(29, 38, 49, 0.012) 32px 32px, 
+	rgba(29, 38, 49, 0.01) 33px 33px, 
+	rgba(29, 38, 49, 0.01) 34px 34px, 
+	rgba(29, 38, 49, 0.01) 35px 35px,
+	rgba(29, 38, 49, 0.01) 44px 44px,
+	rgba(29, 38, 49, 0.01) 48px 48px,
+	rgba(29, 38, 49, 0.01) 52px 52px,
+	rgba(29, 38, 49, 0.01) 56px 56px,
+	rgba(29, 38, 49, 0.01) 60px 60px;
+}
+/* Logn Shadow Style */
+.login-box{
+	box-shadow: rgb(198, 74, 105) 1px 1px,
+    rgb(198, 74, 105) 2px 2px,
+    rgb(198, 74, 105) 3px 3px,
+    rgb(198, 74, 105) 4px 4px,
+    rgb(198, 74, 105) 5px 5px,
+    rgb(198, 74, 105) 6px 6px,
+    rgb(198, 74, 105) 7px 7px,
+    rgb(198, 74, 105) 8px 8px,
+    rgb(198, 74, 105) 9px 9px,
+    rgb(198, 74, 105) 10px 10px,
+    rgb(198, 74, 105) 11px 11px,
+    rgb(198, 74, 105) 12px 12px,
+    rgb(198, 74, 105) 13px 13px,
+    rgb(198, 74, 105) 14px 14px,
+    rgb(198, 74, 105) 15px 15px,
+    rgb(198, 74, 105) 16px 16px,
+    rgb(198, 74, 105) 17px 17px,
+    rgb(198, 74, 105) 18px 18px,
+    rgb(198, 74, 105) 19px 19px,
+    rgb(198, 74, 105) 20px 20px,
+    rgb(198, 74, 105) 21px 21px,
+    rgb(198, 74, 105) 22px 22px,
+    rgb(198, 74, 105) 23px 23px,
+    rgb(198, 74, 105) 24px 24px,
+    rgb(198, 74, 105) 25px 25px,
+    rgb(198, 74, 105) 26px 26px,
+    rgb(198, 74, 105) 27px 27px,
+    rgb(198, 74, 105) 28px 28px,
+    rgb(198, 74, 105) 29px 29px,
+    rgb(198, 74, 105) 30px 30px,
+    rgb(198, 74, 105) 31px 31px,
+    rgb(198, 74, 105) 32px 32px,
+    rgb(198, 74, 105) 33px 33px,
+    rgb(198, 74, 105) 34px 34px,
+    rgb(198, 74, 105) 35px 35px,
+    rgb(198, 74, 105) 36px 36px,
+    rgb(198, 74, 105) 37px 37px,
+    rgb(198, 74, 105) 38px 38px,
+    rgb(198, 74, 105) 39px 39px,
+    rgb(198, 74, 105) 40px 40px,
+    rgb(198, 74, 105) 41px 41px,
+    rgb(198, 74, 105) 42px 42px,
+    rgb(198, 74, 105) 43px 43px,
+    rgb(198, 74, 105) 44px 44px,
+    rgb(198, 74, 105) 45px 45px,
+    rgb(198, 74, 105) 46px 46px,
+    rgb(198, 74, 105) 47px 47px,
+    rgb(198, 74, 105) 48px 48px,
+    rgb(198, 74, 105) 49px 49px,
+    rgb(198, 74, 105) 50px 50px,
+    rgb(198, 74, 105) 51px 51px,
+    rgb(198, 74, 105) 52px 52px,
+    rgb(198, 74, 105) 53px 53px,
+    rgb(198, 74, 105) 54px 54px,
+    rgb(198, 74, 105) 55px 55px,
+    rgb(198, 74, 105) 56px 56px,
+    rgb(198, 74, 105) 57px 57px,
+    rgb(198, 74, 105) 58px 58px,
+    rgb(198, 74, 105) 59px 59px,
+    rgb(198, 74, 105) 60px 60px,
+    rgb(198, 74, 105) 61px 61px,
+    rgb(198, 74, 105) 62px 62px,
+    rgb(198, 74, 105) 63px 63px,
+    rgb(198, 74, 105) 64px 64px,
+    rgb(198, 74, 105) 65px 65px,
+    rgb(198, 74, 105) 66px 66px,
+    rgb(198, 74, 105) 67px 67px,
+    rgb(198, 74, 105) 68px 68px,
+    rgb(198, 74, 105) 69px 69px,
+    rgb(198, 74, 105) 70px 70px,
+    rgb(198, 74, 105) 71px 71px,
+    rgb(198, 74, 105) 72px 72px,
+    rgb(198, 74, 105) 73px 73px,
+    rgb(198, 74, 105) 74px 74px,
+    rgb(198, 74, 105) 75px 75px,
+    rgb(198, 74, 105) 76px 76px,
+    rgb(198, 74, 105) 77px 77px,
+    rgb(198, 74, 105) 78px 78px,
+    rgb(198, 74, 105) 79px 79px,
+    rgb(198, 74, 105) 80px 80px,
+    rgb(198, 74, 105) 81px 81px,
+    rgb(198, 74, 105) 82px 82px,
+    rgb(198, 74, 105) 83px 83px,
+    rgb(198, 74, 105) 84px 84px,
+    rgb(198, 74, 105) 85px 85px,
+    rgb(198, 74, 105) 86px 86px,
+    rgb(198, 74, 105) 87px 87px,
+    rgb(198, 74, 105) 88px 88px,
+    rgb(198, 74, 105) 89px 89px,
+    rgb(198, 74, 105) 90px 90px,
+    rgb(198, 74, 105) 91px 91px,
+    rgb(198, 74, 105) 92px 92px,
+    rgb(198, 74, 105) 93px 93px,
+    rgb(198, 74, 105) 94px 94px,
+    rgb(198, 74, 105) 95px 95px,
+    rgb(198, 74, 105) 96px 96px,
+    rgb(198, 74, 105) 97px 97px,
+    rgb(198, 74, 105) 98px 98px,
+    rgb(198, 74, 105) 99px 99px,
+    rgb(198, 74, 105) 100px 100px,
+    rgb(198, 74, 105) 101px 101px,
+    rgb(198, 74, 105) 102px 102px,
+    rgb(198, 74, 105) 103px 103px,
+    rgb(198, 74, 105) 104px 104px,
+    rgb(198, 74, 105) 105px 105px,
+    rgb(198, 74, 105) 106px 106px,
+    rgb(199, 74, 105) 107px 107px,
+    rgb(199, 74, 105) 108px 108px,
+    rgb(199, 74, 105) 109px 109px,
+    rgb(200, 74, 106) 110px 110px,
+    rgb(200, 74, 106) 111px 111px,
+    rgb(200, 75, 106) 112px 112px,
+    rgb(201, 75, 106) 113px 113px,
+    rgb(201, 75, 106) 114px 114px,
+    rgb(201, 75, 106) 115px 115px,
+    rgb(202, 75, 107) 116px 116px,
+    rgb(202, 75, 107) 117px 117px,
+    rgb(202, 75, 107) 118px 118px,
+    rgb(203, 75, 107) 119px 119px,
+    rgb(203, 76, 107) 120px 120px,
+    rgb(203, 76, 108) 121px 121px,
+    rgb(204, 76, 108) 122px 122px,
+    rgb(204, 76, 108) 123px 123px,
+    rgb(204, 76, 108) 124px 124px,
+    rgb(205, 76, 108) 125px 125px,
+    rgb(205, 76, 108) 126px 126px,
+    rgb(205, 76, 109) 127px 127px,
+    rgb(206, 77, 109) 128px 128px,
+    rgb(206, 77, 109) 129px 129px,
+    rgb(206, 77, 109) 130px 130px,
+    rgb(207, 77, 109) 131px 131px,
+    rgb(207, 77, 109) 132px 132px,
+    rgb(207, 77, 110) 133px 133px,
+    rgb(208, 77, 110) 134px 134px,
+    rgb(208, 77, 110) 135px 135px,
+    rgb(208, 78, 110) 136px 136px,
+    rgb(209, 78, 110) 137px 137px,
+    rgb(209, 78, 111) 138px 138px,
+    rgb(209, 78, 111) 139px 139px,
+    rgb(210, 78, 111) 140px 140px,
+    rgb(210, 78, 111) 141px 141px,
+    rgb(210, 78, 111) 142px 142px,
+    rgb(211, 78, 111) 143px 143px,
+    rgb(211, 79, 112) 144px 144px,
+    rgb(211, 79, 112) 145px 145px,
+    rgb(212, 79, 112) 146px 146px,
+    rgb(212, 79, 112) 147px 147px,
+    rgb(212, 79, 112) 148px 148px,
+    rgb(213, 79, 112) 149px 149px,
+    rgb(213, 79, 113) 150px 150px,
+    rgb(213, 79, 113) 151px 151px,
+    rgb(214, 80, 113) 152px 152px,
+    rgb(214, 80, 113) 153px 153px,
+    rgb(214, 80, 113) 154px 154px,
+    rgb(215, 80, 114) 155px 155px,
+    rgb(215, 80, 114) 156px 156px,
+    rgb(215, 80, 114) 157px 157px,
+    rgb(216, 80, 114) 158px 158px,
+    rgb(216, 80, 114) 159px 159px,
+    rgb(216, 81, 114) 160px 160px,
+    rgb(217, 81, 115) 161px 161px,
+    rgb(217, 81, 115) 162px 162px,
+    rgb(217, 81, 115) 163px 163px,
+    rgb(218, 81, 115) 164px 164px,
+    rgb(218, 81, 115) 165px 165px,
+    rgb(218, 81, 115) 166px 166px,
+    rgb(219, 81, 116) 167px 167px,
+    rgb(219, 82, 116) 168px 168px,
+    rgb(219, 82, 116) 169px 169px,
+    rgb(220, 82, 116) 170px 170px,
+    rgb(220, 82, 116) 171px 171px,
+    rgb(220, 82, 117) 172px 172px,
+    rgb(221, 82, 117) 173px 173px,
+    rgb(221, 82, 117) 174px 174px,
+    rgb(221, 82, 117) 175px 175px,
+    rgb(222, 83, 117) 176px 176px,
+    rgb(222, 83, 117) 177px 177px,
+    rgb(222, 83, 118) 178px 178px,
+    rgb(223, 83, 118) 179px 179px,
+    rgb(223, 83, 118) 180px 180px,
+    rgb(223, 83, 118) 181px 181px,
+    rgb(224, 83, 118) 182px 182px,
+    rgb(224, 83, 118) 183px 183px,
+    rgb(224, 84, 119) 184px 184px,
+    rgb(225, 84, 119) 185px 185px,
+    rgb(225, 84, 119) 186px 186px,
+    rgb(225, 84, 119) 187px 187px,
+    rgb(226, 84, 119) 188px 188px,
+    rgb(226, 84, 120) 189px 189px,
+    rgb(226, 84, 120) 190px 190px,
+    rgb(227, 84, 120) 191px 191px,
+    rgb(227, 85, 120) 192px 192px,
+    rgb(227, 85, 120) 193px 193px,
+    rgb(228, 85, 120) 194px 194px,
+    rgb(228, 85, 121) 195px 195px,
+    rgb(228, 85, 121) 196px 196px,
+    rgb(229, 85, 121) 197px 197px,
+    rgb(229, 85, 121) 198px 198px,
+    rgb(229, 85, 121) 199px 199px,
+    rgb(230, 86, 122) 200px 200px;
+}
+
+
+.page-icon-shadow { 
+	width: 100px;
+	height:100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	background: transparent;
+	text-align: center; 
+	margin: -60px auto 0;
+	background: transparent;
+	-webkit-animation-delay: 0.8s;
+	-moz-animation-delay: 0.8s;
+	-o-animation-delay: 0.8s;
+	animation-delay: 0.8s;	
+	bottom: -120px;
+	position: relative; 
+    box-shadow: rgb(198, 74, 105) 1px 1px,
+    rgb(198, 74, 105) 2px 2px,
+    rgb(198, 74, 105) 3px 3px,
+    rgb(198, 74, 105) 4px 4px,
+    rgb(198, 74, 105) 5px 5px,
+    rgb(198, 74, 105) 6px 6px,
+    rgb(198, 74, 105) 7px 7px,
+    rgb(198, 74, 105) 8px 8px,
+    rgb(198, 74, 105) 9px 9px,
+    rgb(198, 74, 105) 10px 10px,
+    rgb(198, 74, 105) 11px 11px,
+    rgb(198, 74, 105) 12px 12px,
+    rgb(198, 74, 105) 13px 13px,
+    rgb(198, 74, 105) 14px 14px,
+    rgb(198, 74, 105) 15px 15px,
+    rgb(198, 74, 105) 16px 16px,
+    rgb(198, 74, 105) 17px 17px,
+    rgb(198, 74, 105) 18px 18px,
+    rgb(198, 74, 105) 19px 19px,
+    rgb(198, 74, 105) 20px 20px,
+    rgb(198, 74, 105) 21px 21px,
+    rgb(198, 74, 105) 22px 22px,
+    rgb(198, 74, 105) 23px 23px,
+    rgb(198, 74, 105) 24px 24px,
+    rgb(198, 74, 105) 25px 25px,
+    rgb(198, 74, 105) 26px 26px,
+    rgb(198, 74, 105) 27px 27px,
+    rgb(198, 74, 105) 28px 28px,
+    rgb(198, 74, 105) 29px 29px,
+    rgb(198, 74, 105) 30px 30px,
+    rgb(198, 74, 105) 31px 31px,
+    rgb(198, 74, 105) 32px 32px,
+    rgb(198, 74, 105) 33px 33px,
+    rgb(198, 74, 105) 34px 34px,
+    rgb(198, 74, 105) 35px 35px,
+    rgb(198, 74, 105) 36px 36px,
+    rgb(198, 74, 105) 37px 37px,
+    rgb(198, 74, 105) 38px 38px,
+    rgb(198, 74, 105) 39px 39px,
+    rgb(198, 74, 105) 40px 40px,
+    rgb(198, 74, 105) 41px 41px,
+    rgb(198, 74, 105) 42px 42px,
+    rgb(198, 74, 105) 43px 43px,
+    rgb(198, 74, 105) 44px 44px,
+    rgb(198, 74, 105) 45px 45px,
+    rgb(198, 74, 105) 46px 46px,
+    rgb(198, 74, 105) 47px 47px,
+    rgb(198, 74, 105) 48px 48px,
+    rgb(198, 74, 105) 49px 49px,
+    rgb(198, 74, 105) 50px 50px;
+}  
+.page-icon .glyphicon{
+	color:#FFF;
+	font-size: 3em;
+	line-height: 2.3em;
+	 text-shadow: rgb(172, 54, 82) 1px 1px,
+    rgb(175, 55, 83) 2px 2px,
+    rgb(178, 56, 85) 3px 3px,
+    rgb(181, 57, 86) 4px 4px,
+    rgb(184, 58, 87) 5px 5px,
+    rgb(186, 59, 89) 6px 6px,
+    rgb(189, 60, 90) 7px 7px,
+    rgb(192, 61, 91) 8px 8px,
+    rgb(195, 62, 93) 9px 9px,
+    rgb(198, 63, 94) 10px 10px,
+    rgb(200, 64, 95) 11px 11px,
+    rgb(203, 65, 97) 12px 12px,
+    rgb(206, 66, 98) 13px 13px,
+    rgb(209, 67, 99) 14px 14px,
+    rgb(212, 68, 101) 15px 15px;
+}
+
+#footer-text{
+	position: relative;
+} 
+  
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
+=================================================================== */
+@media only screen and (max-width: 479px) {
+	#login-block{	 
+		padding-top: 10px;
+		padding-bottom: 25px;
+	}
+	
+}
+
+/* Tablet Portrait Size to Tablet Landscape Size (devices and browsers)
+=================================================================== */
+@media only screen and (min-width: 480px) and (max-width: 767px){
+	#login-block {	 
+		margin: 0 auto;
+		width: 420px;
+	}
+	
+}
+
+

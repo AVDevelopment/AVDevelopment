@@ -1,0 +1,63 @@
+body {
+    //background-color: #FFF;
+}
+
+.modal {
+    .modal-header {
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+    }
+
+    .modal-body {
+        max-height: 500px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    .modal-footer {
+        .btn {
+            float: right;
+            margin-left: 5px;
+        }
+    }
+}
+
+input[type="checkbox"].form-control,
+input[type="radio"].form-control {
+    width: auto;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+.form-horizontal .form-group .control-label:after {
+    content: ":";
+}
+
+select {
+    cursor: pointer;
+}
+
+.settings > .btn {
+	display: none !important;
+}
+
+.dropdown-menu {
+	> li > a {
+		position: relative;
+
+		.rightPulledIcon {
+			font-size: 15px;
+			position: absolute;
+			right: 10px;
+			top: 8px;
+		}
+	}
+}
+
+.padder {
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+}

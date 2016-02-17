@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AV.Development.Dal.Metadata.Model.TreeLevelDao,AV.Development.Dal" table="`MD_TreeLevel`" lazy="true">
+    <id name="Id" column="ID">
+      <generator class="assigned">
+        <param name="property">Id</param>
+      </generator>
+    </id>
+		<property type="int" not-null="true" name="Level" column="`Level`"/>
+		<property type="string" not-null="true" length="500" name="LevelName" column="`LevelName`"/>
+		<property type="int" not-null="true" name="AttributeID" column="`AttributeID`"/>
+		<property type="Boolean" not-null="false" name="IsPercentage" column="`IsPercentage`"/>
+  </class>
+</hibernate-mapping>

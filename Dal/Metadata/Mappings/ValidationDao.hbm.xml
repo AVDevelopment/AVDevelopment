@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AV.Development.Dal.Metadata.Model.ValidationDao,AV.Development.Dal" table="`MD_Validation`" lazy="true">
+    <id name="Id" column="ID">
+      <generator class="assigned">
+        <param name="property">Id</param>
+      </generator>
+    </id>
+    <property type="int" not-null="true" length="1073741823" name="EntityTypeID" column="EntityTypeID"/>
+    <property type="int" not-null="true" length="1073741823" name="RelationShipID" column="RelationShipID"/>
+    <property type="string" not-null="true" length="1073741823" name="Name" column="Name"/>
+    <property type="string" not-null="true" length="1073741823" name="ValueType" column="ValueType"/>
+    <property type="string" not-null="true" length="1073741823" name="ErrorMessage" column="ErrorMessage"/>
+    <property type="string" not-null="false" length="1073741823" name="Value" column="Value"/>
+  </class>
+</hibernate-mapping>
