@@ -1253,7 +1253,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54322</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/BaseSystemDEV</IISUrl>
+          <IISUrl>http://localhost/AVDevBaseSystemDEV</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
