@@ -11,6 +11,7 @@ using AV.Development.Core.Managers;
 using AV.Development.Core.Mongo;
 using Development.Utility;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MongoDB.Driver;
 
 
 
@@ -39,50 +40,58 @@ namespace AV.Development.Tests.Controllers
             Guid systemSession = DevelopmentManagerFactory.GetSystemSession();
             IDevelopmentManager developmentManager = DevelopmentManagerFactory.GetDevelopmentManager(systemSession);
 
-            // Initialize our database provider.
-            Setup.Initialize();
 
-            List<messagescopy> dragons1 = new List<messagescopy>();
-            dragons1 = DragonManager.GetPaginationAllEnron(1, 10);
+            var MongoDbContext = new MongoDbContext();
+            var user = MongoDbContext.Posts.Find(x => x.headers.From == "reservations@marriott.com").FirstOrDefault();
 
-            Expression<Func<messagescopy, bool>> filter = child => child.mailbox == "bass-e";
-            var dt = DragonManager.FindSingleMessage(filter);
-            var dt1 = DragonManager.FindgroupMessage(filter);
+            var user1 = MongoDbContext.Posts.Find(x => true).FirstOrDefault().headers;
 
-            //List<messagescopy> dragons12 = DragonManager.GetAllEnron().Where(a => a.mailbox == "bass-e").ToList();
-            ////get all dragons
-            //dragons1 = DragonManager.GetAll();
-            //// Search for dragons.
-            //List<Dragon> dragons2 = DragonManager.Find("Evil Legendary", 1, 1);
-            //// Search for dragons.
-            //List<Dragon> dragons = DragonManager.Find("Evil Legendary");
-            ////List<countryshortcodes> dragons1 = DragonManager.GetAllCountry().Where(a => a.name.ToLower().StartsWith("e")).ToList();
+            Expression<Func<messagescopy_copy1, bool>> filter = x => true;
+
+            Expression<Func<messagescopy_copy1, bool>> filter1 = child => child.headers.From == "reservations@marriott.com";
+
+            string to = "reservations@marriott.com";
+
+            if (to != null)
+            {
+                filter = x => x.Id == "4f16fc97d1e2d32371003f02" && x.headers.To.Contains("ebass@enron.com");
+            }
+
+            var posts = MongoDbContext.Posts.Find(filter)
+                .SortByDescending(x => x.headers.Date)
+                .ToList();
+
+            var posts1 = MongoDbContext.Posts.Find(filter1)
+               .SortByDescending(x => x.headers.Date)
+               .ToList();
 
 
-            //UpdateSearcEngineRecursiveLoop(1, 10000);      // Demonstartion for search index updation;
+            var searchResult = MongoDbContext.Posts.Find(x => x.headers.From.Contains("reservations")).SortByDescending(a => a.Id).ToList();
 
-            Setup.Close();
+            var searchResult1 = MongoDbContext.Posts.Find(x => x.headers.To.Contains("ebass@enron.com")).SortByDescending(a => a.Id).ToList();
 
-            Assert.AreNotEqual(0, dragons1.Count);
+            var searchResult2 = MongoDbContext.Posts.Find(x => x.body.Contains("PLEASE DO NOT REPLY TO THIS EMAIL")).SortByDescending(a => a.Id).ToList();
 
+            var testResult = user1;
 
         }
 
         public int UpdateSearcEngineRecursiveLoop(int pageNumber, int PageSize)
         {
 
-            List<messagescopy> dragons1 = new List<messagescopy>();
-            dragons1 = DragonManager.GetPaginationAllEnron(pageNumber, PageSize);
-            foreach (messagescopy mes in dragons1)
-            {
-                string messaBody = mes.body;
-            }
-            if (dragons1.Count == 0)
-                return 0;
-            else if (dragons1.Count >= 0)
-                return UpdateSearcEngineRecursiveLoop(pageNumber + 1, PageSize);
-            else return 0;
+            //List<messagescopy> dragons1 = new List<messagescopy>();
+            //dragons1 = DragonManager.GetPaginationAllEnron(pageNumber, PageSize);
+            //foreach (messagescopy mes in dragons1)
+            //{
+            //    string messaBody = mes.body;
+            //}
+            //if (dragons1.Count == 0)
+            //    return 0;
+            //else if (dragons1.Count >= 0)
+            //    return UpdateSearcEngineRecursiveLoop(pageNumber + 1, PageSize);
+            //else return 0;
 
+            return 0;
 
         }
 
