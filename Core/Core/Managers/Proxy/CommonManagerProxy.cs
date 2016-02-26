@@ -10,6 +10,8 @@ using System.Collections;
 using Newtonsoft.Json.Linq;
 using AV.Development.Core.Metadata;
 using AV.Development.Dal.User.Model;
+using AV.Development.Dal.MongoDB.DatabaseObjects;
+using AV.Development.Dal.MongoDB.Domain;
 
 namespace AV.Development.Core.Managers.Proxy
 {
@@ -42,7 +44,7 @@ namespace AV.Development.Core.Managers.Proxy
             get { return _DevelopmentManager; }
         }
 
-        #region Test
+        #region Methods
 
         #region TestMethod
 
@@ -52,7 +54,6 @@ namespace AV.Development.Core.Managers.Proxy
         }
 
         #endregion
-
         #region SaveError
 
         public bool SaveError(ErrorDao _error)
@@ -61,6 +62,14 @@ namespace AV.Development.Core.Managers.Proxy
         }
 
         #endregion
+
+        #region GetEntities
+        public IList<Entity> GetEntities(int pageNo, int pageSize)
+        {
+            return CommonManager.Instance.GetEntities(this, pageNo, pageSize);
+        }
+        #endregion
+
         #endregion
 
 

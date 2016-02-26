@@ -79,6 +79,7 @@
     <Compile Include="Base\GenericRepository.cs" />
     <Compile Include="Base\MultiProperty.cs" />
     <Compile Include="Base\PersistenceManager.cs" />
+    <Compile Include="Metadata\MetadataRepository.cs" />
     <Compile Include="Metadata\Models\AttributeDao.cs" />
     <Compile Include="Metadata\Models\AttributeTypeDao.cs" />
     <Compile Include="Metadata\Models\EntityTypeDao.cs" />
@@ -90,13 +91,16 @@
     <Compile Include="Metadata\Models\OptionDao.cs" />
     <Compile Include="Metadata\Models\TreeLevelDao.cs" />
     <Compile Include="Metadata\Models\TreeNodeDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\AttributeDataMongoDao.cs" />
     <Compile Include="MongoDB\DatabaseObjects\EntityMongoDao.cs" />
     <Compile Include="MongoDB\DatabaseObjects\MongoDbDomainBase.cs" />
     <Compile Include="MongoDB\DatabaseObjects\MongoDbObjectBase.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\MultiProperty.cs" />
+    <Compile Include="MongoDB\Domain\Entity.cs" />
     <Compile Include="MongoDB\MarketRoboContext.cs" />
     <Compile Include="MongoDB\Repositories\ConfigurationRepository.cs" />
     <Compile Include="MongoDB\Repositories\Interface\IConfigurationRepository.cs" />
-    <Compile Include="MongoDB\Repositories\Interface\IConnectionStringRepository.cs" />
+    <Compile Include="MongoDB\Repositories\Interface\IMongoConnectionStringRepository.cs" />
     <Compile Include="MongoDB\Repositories\ModelConversions.cs" />
     <Compile Include="MongoDB\Repositories\MongoDbRepository.cs" />
     <Compile Include="MongoDB\Repositories\WebConfigConnectionStringRepository.cs" />
@@ -131,7 +135,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

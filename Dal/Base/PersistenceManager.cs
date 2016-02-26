@@ -10,6 +10,8 @@ using System.IO;
 using System.Web;
 using System.Xml;
 using NHibernate.Tool.hbm2ddl;
+using AV.Development.Dal.Metadata;
+using AV.Development.Dal.MongoDB.Repositories;
 namespace AV.Development.Dal.Base
 {
     public class PersistenceManager : IDisposable
@@ -20,7 +22,11 @@ namespace AV.Development.Dal.Base
 
         private UserRepository _userRepository = null;
 
-       
+        private MetadataRepository _metadataRepository = null;
+
+        private ConfigurationRepository _configurationMongoRepository = null;
+
+
 
         public static PersistenceManager Instance
         {
@@ -37,7 +43,7 @@ namespace AV.Development.Dal.Base
             cfg.Configure();
 
             // Add class mappings to configuration object
-           
+
             cfg.AddAssembly(this.GetType().Assembly);
 
 
@@ -46,7 +52,11 @@ namespace AV.Development.Dal.Base
 
             _userRepository = new UserRepository(_sessionFactory);
 
-           
+            _metadataRepository = new MetadataRepository(_sessionFactory);
+
+            _configurationMongoRepository = new ConfigurationRepository(new WebConfigConnectionStringRepository());
+
+
 
         }
 
@@ -92,7 +102,7 @@ namespace AV.Development.Dal.Base
                 }
             }
         }
-       
+
         public void Close()
         {
 
@@ -112,6 +122,18 @@ namespace AV.Development.Dal.Base
             get { return _userRepository; }
         }
 
-        
+        //Metadata Manager
+        public MetadataRepository MetadataRepository
+        {
+            get { return _metadataRepository; }
+        }
+
+        //MongoDb configuration Repository
+        public ConfigurationRepository ConfigurationRepository
+        {
+            get { return _configurationMongoRepository; }
+        }
+
+
     }
 }

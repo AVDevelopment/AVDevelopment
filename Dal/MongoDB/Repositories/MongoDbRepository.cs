@@ -9,15 +9,15 @@ namespace AV.Development.Dal.MongoDB.Repositories
 {
     public abstract class MongoDbRepository
     {
-        private readonly IConnectionStringRepository _connectionStringRepository;
+        private readonly IMongoConnectionStringRepository _connectionStringRepository;
 
-        public MongoDbRepository(IConnectionStringRepository connectionStringRepository)
+        public MongoDbRepository(IMongoConnectionStringRepository connectionStringRepository)
         {
             if (connectionStringRepository == null) throw new ArgumentNullException("ConnectionStringRepository");
             _connectionStringRepository = connectionStringRepository;
         }
 
-        public IConnectionStringRepository ConnectionStringRepository
+        public IMongoConnectionStringRepository ConnectionStringRepository
         {
             get
             {

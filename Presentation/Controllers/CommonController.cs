@@ -11,6 +11,7 @@ using System.Web.Http;
 using Development.Utility;
 using AV.Development.Core.Managers;
 using System.Linq.Expressions;
+using Newtonsoft.Json;
 
 namespace AV.Development.Web.Controllers
 {
@@ -33,6 +34,50 @@ namespace AV.Development.Web.Controllers
             {
                 result.StatusCode = (int)HttpStatusCode.OK;
                 result.Response = DateTime.Now;
+            }
+            catch
+            {
+                result.StatusCode = (int)HttpStatusCode.MethodNotAllowed;
+                result.Response = 0;
+            }
+            return result;
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("TestMethod")]
+        public ServiceResponse TestMethod()
+        {
+
+            result = new ServiceResponse();
+            try
+            {
+                Guid systemSession = DevelopmentManagerFactory.GetSystemSession();
+                IDevelopmentManager marcomManager = DevelopmentManagerFactory.GetDevelopmentManager(systemSession);
+                result.StatusCode = (int)HttpStatusCode.OK;
+                result.Response = marcomManager.CommonManager.TestMethod();
+            }
+            catch
+            {
+                result.StatusCode = (int)HttpStatusCode.MethodNotAllowed;
+                result.Response = 0;
+            }
+            return result;
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("GetEntities/{pageNo}/{pageSize}")]
+        public ServiceResponse GetEntities(int pageNo, int pageSize)
+        {
+            result = new ServiceResponse();
+            try
+            {
+                Guid systemSession = DevelopmentManagerFactory.GetSystemSession();
+                IDevelopmentManager marcomManager = DevelopmentManagerFactory.GetDevelopmentManager(systemSession);
+                result.StatusCode = (int)HttpStatusCode.OK;
+                //result.Response = JsonConvert.SerializeObject(marcomManager.CommonManager.GetEntities(pageNo, pageSize)); //serialization sample
+                result.Response = marcomManager.CommonManager.GetEntities(pageNo, pageSize);
             }
             catch
             {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AV.Development.Dal.MongoDB.Repositories.Interface
 {
-    public interface IConnectionStringRepository
+    public interface IMongoConnectionStringRepository
     {
         string ReadConnectionString(string connectionStringName);
     }

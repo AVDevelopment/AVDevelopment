@@ -8,6 +8,8 @@ using System.Collections;
 using Newtonsoft.Json.Linq;
 using AV.Development.Core.Metadata;
 using AV.Development.Dal.User.Model;
+using AV.Development.Dal.MongoDB.DatabaseObjects;
+using AV.Development.Dal.MongoDB.Domain;
 
 namespace AV.Development.Core.Interface.Managers
 {
@@ -24,6 +26,10 @@ namespace AV.Development.Core.Interface.Managers
         #region TestMethod
         string TestMethod();
         bool SaveError(ErrorDao _error);
+
+        #region GetEntities
+        IList<Entity> GetEntities(int pageNo, int pageSize);
+        #endregion
 
         #endregion
 

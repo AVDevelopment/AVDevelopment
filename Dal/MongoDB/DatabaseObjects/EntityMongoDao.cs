@@ -16,6 +16,14 @@ namespace AV.Development.Dal.MongoDB.DatabaseObjects
         public string Name { get; set; }
         [BsonRepresentation(BsonType.DateTime)]
         public DateTime CreationDate { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string UniqueKey { get; set; }
+        [BsonIgnoreIfNull]
+        public List<AttributeDataMongoDao> AttributeData { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public string TypeName { get; set; }
+        [BsonRepresentation(BsonType.Int32)]
+        public int TypeId { get; set; }
 
     }
 }

@@ -10,12 +10,31 @@ using System.Collections;
 using System.Diagnostics.Contracts;
 using System.IO;
 using NHibernate.Linq;
+using AV.Development.Dal.MongoDB.Repositories.Interface;
 
 
 namespace AV.Development.Dal.Base
 {
     public class GenericRepository
     {
+
+
+        private readonly IMongoConnectionStringRepository _connectionStringRepository;
+
+        public GenericRepository(IMongoConnectionStringRepository connectionStringRepository)
+        {
+            if (connectionStringRepository == null) throw new ArgumentNullException("ConnectionStringRepository");
+            _connectionStringRepository = connectionStringRepository;
+        }
+
+        public IMongoConnectionStringRepository ConnectionStringRepository
+        {
+            get
+            {
+                return _connectionStringRepository;
+            }
+        }
+
         protected ISessionFactory _sessionFactory = null;
 
         public GenericRepository(ISessionFactory sessionFactory)
@@ -147,7 +166,7 @@ namespace AV.Development.Dal.Base
                           .ExecuteUpdate();
         }
 
-      
+
 
         public T Get<T>(object id)
         {
@@ -167,7 +186,7 @@ namespace AV.Development.Dal.Base
             criteria.Add(Expression.Eq(field1, propertyValue1)).Add(Expression.Eq(field2, propertyValue2));
 
             return criteria.UniqueResult<T>();
-           
+
         }
 
         public T Get<T>(string propertyName, object propertyValue)
@@ -351,14 +370,14 @@ namespace AV.Development.Dal.Base
 
         }
 
-        public void SaveDynamicEntity<T>(string entityname,IList<T> items)
+        public void SaveDynamicEntity<T>(string entityname, IList<T> items)
         {
             ISession session = _sessionFactory.GetCurrentSession();
             session.CacheMode = CacheMode.Ignore;
             session.FlushMode = FlushMode.Commit;
             foreach (T item in items)
             {
-                session.SaveOrUpdate(entityname,item);
+                session.SaveOrUpdate(entityname, item);
             }
 
         }

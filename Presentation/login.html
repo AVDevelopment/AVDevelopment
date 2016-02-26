@@ -33,12 +33,14 @@
     <![endif]-->
 
     <style>
-        #login-block {
+        #login-block
+        {
             padding-top: 0;
         }
 
         .btn.btn-login,
-        .btn.btn-reset {
+        .btn.btn-reset
+        {
             width: 252px !important;
         }
     </style>
@@ -81,8 +83,7 @@
                             <button id="loginbtn" type="button" onclick="loginUser(this);" class="btn btn-login">Login</button>
                         </form>
                         <div class="login-links">
-                            <a href="forgot-password.html">
-                                Forgot password?
+                            <a href="forgot-password.html">Forgot password?
                             </a>
                         </div>
                     </div>
@@ -122,17 +123,56 @@
                 contentType: "application/json",
                 success: OnSuccess,
                 failure: function (response) {
-                    alert(response.d);
+                    console.log(response.d);
                 }
             });
         }
+
+        function TestMethod() {
+            $.ajax({
+                type: "GET",
+                url: "api/Common/TestMethod",
+                contentType: "application/json",
+                success: OnSuccess,
+                failure: function (response) {
+                    console.log(response.d);
+                }
+            });
+        }
+
+        var currentpageNumber = 1;
+
+        function GetEntities() {
+            $.ajax({
+                type: "GET",
+                url: "api/Common/GetEntities/" + currentpageNumber + "/500",
+                contentType: "application/json",
+                success: OnScrollSuccess,
+                failure: function (response) {
+                    console.log(response.d);
+                }
+            });
+        }
+
         function OnSuccess(response) {
             console.log(response.Response);
         }
 
+        function OnScrollSuccess(response) {
+            console.log(response.Response);
+            if (response.Response.length > 0) {
+                currentpageNumber++;
+                //GetEntities();
+            }
+           
+        }
+
+
 
         $(document).ready(function () {
             ShowCurrentTime();
+            TestMethod();
+            GetEntities();
         });
 
         jQuery.support.cors = true;

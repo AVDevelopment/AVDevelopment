@@ -7,7 +7,7 @@ using AV.Development.Dal.MongoDB.Repositories.Interface;
 
 namespace AV.Development.Dal.MongoDB.Repositories
 {
-    public class WebConfigConnectionStringRepository : IConnectionStringRepository
+    public class WebConfigConnectionStringRepository : IMongoConnectionStringRepository
     {
         public string ReadConnectionString(string connectionStringName)
         {

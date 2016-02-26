@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AV.Development.Dal.MongoDB.DatabaseObjects;
 using AV.Development.Dal.MongoDB.Repositories.Interface;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace AV.Development.Dal.MongoDB
@@ -18,7 +19,7 @@ namespace AV.Development.Dal.MongoDB
 
         private MarketRoboContext() { }
 
-        public static MarketRoboContext Create(IConnectionStringRepository connectionStringRepository)
+        public static MarketRoboContext Create(IMongoConnectionStringRepository connectionStringRepository)
         {
             if (_loadTestingContext == null)
             {
@@ -39,6 +40,26 @@ namespace AV.Development.Dal.MongoDB
         public IMongoCollection<EntityMongoDao> EntitiesVersion(string collectionNames)
         {
             return Database.GetCollection<EntityMongoDao>(collectionNames);
+        }
+
+        public async void CollectionBsonDocument(string collectionName)
+        {
+            var collection = Database.GetCollection<BsonDocument>(collectionName);
+            var filter = new BsonDocument();
+            var count = 0;
+            using (var cursor = await collection.FindAsync(filter))
+            {
+                while (await cursor.MoveNextAsync())
+                {
+                    var batch = cursor.Current;
+                    foreach (var document in batch)
+                    {
+
+                        // process document
+                        count++;
+                    }
+                }
+            }
         }
     }
 }

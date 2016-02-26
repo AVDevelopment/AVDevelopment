@@ -27,6 +27,10 @@ using Development.Utility;
 using System.Globalization;
 using AV.Development.Core.User.Interface;
 using AV.Development.Dal.User.Model;
+using AV.Development.Dal.MongoDB.Repositories.Interface;
+using AV.Development.Dal.MongoDB.Repositories;
+using AV.Development.Dal.MongoDB.DatabaseObjects;
+using AV.Development.Dal.MongoDB.Domain;
 
 namespace AV.Development.Core.Managers
 {
@@ -84,7 +88,7 @@ namespace AV.Development.Core.Managers
 
                 using (ITransaction tx = proxy.DevelopmentManager.GetTransaction())
                 {
-                    //response = tx.PersistenceManager.UserRepository.ExecuteQuery("Query string"));
+                    response = tx.PersistenceManager.MetadataRepository.getServerDate().ToString("yyyy-MM-dd");
                     tx.Commit();
                 }
 
@@ -102,7 +106,37 @@ namespace AV.Development.Core.Managers
             }
 
         }
+        #endregion
 
+        #region GetEntities
+        public IList<Entity> GetEntities(CommonManagerProxy proxy, int pageNo, int pageSize)
+        {
+            IList<Entity> response = null;
+            try
+            {
+
+                using (ITransaction tx = proxy.DevelopmentManager.GetTransaction())
+                {
+                    //IConfigurationRepository repo = new ConfigurationRepository(new WebConfigConnectionStringRepository());  //direct access to the mongoDB
+                    //var entites = repo.GetEntities(1, 10);
+                    response = tx.PersistenceManager.ConfigurationRepository.GetEntities(pageNo, pageSize, true); //mongodb repository access through PersistenceManager
+                    tx.Commit();
+                }
+
+                return response;
+
+            }
+
+            catch (DBConcurrencyException ex)
+            {
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return response;
+            }
+
+        }
         #endregion
 
         /// <summary>

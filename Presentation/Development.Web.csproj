@@ -987,7 +987,6 @@
     <Content Include="img\s7.jpg" />
     <Content Include="img\s8.jpg" />
     <Content Include="img\s9.jpg" />
-    <Content Include="index.html" />
     <Content Include="login.html" />
     <Content Include="loginui\css\animate-custom.css" />
     <Content Include="loginui\css\bootstrap-notify.css" />
