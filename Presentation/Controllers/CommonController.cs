@@ -13,6 +13,7 @@ using AV.Development.Core.Managers;
 using System.Linq.Expressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using AV.Development.Dal.MongoDB.DatabaseObjects;
 
 namespace AV.Development.Web.Controllers
 {
@@ -103,6 +104,28 @@ namespace AV.Development.Web.Controllers
                 IDevelopmentManager marcomManager = DevelopmentManagerFactory.GetDevelopmentManager(systemSession);
                 result.StatusCode = (int)HttpStatusCode.OK;
                 result.Response = marcomManager.CommonManager.GetEntities(1, 20);
+            }
+            catch
+            {
+                result.StatusCode = (int)HttpStatusCode.MethodNotAllowed;
+                result.Response = 0;
+            }
+            return result;
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("GetEntityTypes")]
+        public ServiceResponse GetEntityTypes()
+        {
+            result = new ServiceResponse();
+
+            try
+            {
+                Guid systemSession = DevelopmentManagerFactory.GetSystemSession();
+                IDevelopmentManager marcomManager = DevelopmentManagerFactory.GetDevelopmentManager(systemSession);
+                result.StatusCode = (int)HttpStatusCode.OK;
+                result.Response = marcomManager.CommonManager.GetObject<EntityTypeMongoDao>("version1");
             }
             catch
             {

@@ -120,6 +120,8 @@ namespace AV.Development.Core.Managers
                     //IConfigurationRepository repo = new ConfigurationRepository(new WebConfigConnectionStringRepository());  //direct access to the mongoDB
                     //var entites = repo.GetEntities(1, 10);
                     response = tx.PersistenceManager.ConfigurationRepository.GetEntities(pageNo, pageSize, true); //mongodb repository access through PersistenceManager
+
+
                     tx.Commit();
                 }
 
@@ -142,17 +144,39 @@ namespace AV.Development.Core.Managers
         #region GetObjects
         public List<T> GetObject<T>(CommonManagerProxy proxy)
         {
-            List<T> objects = new List<T>();
+            List<T> objects = null;
             try
             {
 
                 using (ITransaction tx = proxy.DevelopmentManager.GetTransaction())
                 {
                     string xmlpath = ConfigurationManager.AppSettings["DevWebPath"].ToString() + "CurrentMetadataWorking.xml";
-
                     objects = tx.PersistenceManager.MetadataRepository.GetObject<T>(xmlpath);
+                    tx.Commit();
+                }
 
+                return objects;
 
+            }
+
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+        #endregion
+
+        #region GetObjects
+        public List<T> GetObject<T>(CommonManagerProxy proxy, string mongoVersion)
+        {
+            List<T> objects = null;
+            try
+            {
+
+                using (ITransaction tx = proxy.DevelopmentManager.GetTransaction())
+                {
+                    objects = tx.PersistenceManager.ConfigurationRepository.GetObject<T>(mongoVersion);
                     tx.Commit();
                 }
 

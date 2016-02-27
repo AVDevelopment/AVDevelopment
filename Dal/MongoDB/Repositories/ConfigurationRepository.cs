@@ -19,6 +19,8 @@ using AV.Development.Dal.MongoDB.Repositories.Interface;
 using AV.Development.Dal.Base;
 using MongoDB.Driver.Builders;
 using AV.Development.Dal.MongoDB.Domain;
+using System.Threading.Tasks;
+using AV.Development.Dal.Metadata.Model;
 
 namespace AV.Development.Dal.MongoDB.Repositories
 {
@@ -73,6 +75,7 @@ namespace AV.Development.Dal.MongoDB.Repositories
                 .ToList();
 
             IList<Entity> entitesLst = mongoDbLoadEntites.ConvertToDomains().ToList();
+
 
             return entitesLst;
         }
@@ -167,6 +170,37 @@ namespace AV.Development.Dal.MongoDB.Repositories
         {
             return this.GenRandomLastName() + " " + this.GenRandomFirstName();
         }
+
+        /// <summary>
+        /// Get MetaData Objects
+        /// </summary>
+        public List<T> GetObject<T>(string collectionName)
+        {
+            List<T> obj = null;
+            try
+            {
+
+                MarketRoboContext context = MarketRoboContext.Create(new WebConfigConnectionStringRepository());
+                Task<MetadataVersionMongoDao> versionDetailTask = context.MetadataVersion("version1").Find(x => true).SingleOrDefaultAsync();
+                Task.WaitAll(versionDetailTask);
+                MetadataVersionMongoDao versionDetail = versionDetailTask.Result;
+
+                if (typeof(T).Name == "EntityTypeMongoDao")
+                {
+                    obj = versionDetail.EntityTypes.Cast<T>().ToList();
+
+                }
+            }
+            catch
+            {
+
+            }
+
+            return obj;
+        }
+
+
+        #region testUtilityMethods
 
         public static Random rnd = new Random();
         public string GenRandomLastName()
@@ -488,7 +522,6 @@ namespace AV.Development.Dal.MongoDB.Repositories
             str = lst.OrderBy(xx => rnd.Next()).First();
             return str;
         }
-
         public string GenRandomEntityTypeName()
         {
             List<string> lst = new List<string>();
@@ -503,11 +536,10 @@ namespace AV.Development.Dal.MongoDB.Repositories
             str = lst.OrderBy(xx => rnd.Next()).First();
             return str;
         }
-
         public int GenRandomEntityType()
         {
             List<int> lst = new List<int>();
-            int nmbr =1;
+            int nmbr = 1;
             lst.Add(1);
             lst.Add(2);
             lst.Add(3);
@@ -531,6 +563,8 @@ namespace AV.Development.Dal.MongoDB.Repositories
                 return getrandom.Next(min, max);
             }
         }
+
+        #endregion
 
     }
 }

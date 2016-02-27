@@ -154,7 +154,7 @@
             });
         }
 
-        var inputVal = { PageNo: 1, PageSize: 50 }
+        var inputVal = { PageNo: 1, PageSize: 5 }
 
         function GetEntitiesPost() {
             $.ajax({
@@ -162,6 +162,18 @@
                 url: "api/Common/GetEntities/Details",
                 contentType: "application/json",
                 data: JSON.stringify(inputVal),
+                success: OnScrollSuccess,
+                failure: function (response) {
+                    console.log(response.d);
+                }
+            });
+        }
+
+        function GetEntityTypes() {
+            $.ajax({
+                type: "GET",
+                url: "api/Common/GetEntityTypes",
+                contentType: "application/json",
                 success: OnScrollSuccess,
                 failure: function (response) {
                     console.log(response.d);
@@ -189,6 +201,7 @@
             TestMethod();
             GetEntities();
             GetEntitiesPost();
+            GetEntityTypes();
         });
 
         jQuery.support.cors = true;

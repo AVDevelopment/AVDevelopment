@@ -76,8 +76,16 @@ namespace AV.Development.Core.Managers.Proxy
 
             return CommonManager.Instance.GetObject<T>(this);
         }
-
         #endregion
+
+        #region GetObjects
+        public List<T> GetObject<T>(string mongoVersion)
+        {
+
+            return CommonManager.Instance.GetObject<T>(this, mongoVersion);
+        }
+        #endregion
+
         #endregion
 
 

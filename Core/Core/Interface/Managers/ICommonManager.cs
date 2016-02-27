@@ -36,6 +36,10 @@ namespace AV.Development.Core.Interface.Managers
         List<T> GetObject<T>();
         #endregion
 
+        #region GetObjects
+        List<T> GetObject<T>(string mongoVersion);
+        #endregion
+
         #endregion
 
     }

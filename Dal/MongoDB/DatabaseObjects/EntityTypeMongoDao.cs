@@ -34,7 +34,7 @@ namespace AV.Development.Dal.MongoDB.DatabaseObjects
             set;
         }
 
-        [BsonRepresentation(BsonType.Int32)]
+        [BsonRepresentation(BsonType.String)]
         public int ModuleID
         {
             get;

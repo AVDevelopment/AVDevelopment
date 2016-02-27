@@ -22,7 +22,7 @@ namespace AV.Development.Web
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-           //Support for CORS
+            //Support for CORS
             EnableCorsAttribute CorsAttribute = new EnableCorsAttribute("*", "*", "GET,POST");
             config.EnableCors(CorsAttribute);
         }

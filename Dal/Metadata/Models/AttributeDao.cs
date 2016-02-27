@@ -8,7 +8,7 @@ namespace AV.Development.Dal.Metadata.Model
     /// AttributeDao object for table 'MM_Attribute'.
     /// </summary>
 
-    public partial class AttributeDao : BaseDao, ICloneable
+    public class AttributeDao : BaseDao, ICloneable
     {
 
         #region Public Properties

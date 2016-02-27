@@ -55,8 +55,10 @@ namespace AV.Development.Tests.Controllers
             List<EntityMongoDao> toBeUpdated = new List<EntityMongoDao>();
 
             List<AttributeDataMongoDao> attrDao = new List<AttributeDataMongoDao>();
-            attrDao.Add(new AttributeDataMongoDao { ID = 1, Caption = "Fiscal Year", Value = 1, ValueCaption = "2016" });
-            attrDao.Add(new AttributeDataMongoDao { ID = 2, Caption = "Country", Value = 2, ValueCaption = "India" });
+            AttributeDataMongoDao attr1 = new AttributeDataMongoDao { DbObjectId = MongoDB.Bson.ObjectId.GenerateNewId(), AttributeID = 1, Caption = "Fiscal Year", Value = "1", ValueCaption = "2016" };
+            AttributeDataMongoDao attr2 = new AttributeDataMongoDao { DbObjectId = MongoDB.Bson.ObjectId.GenerateNewId(), AttributeID = 2, Caption = "Country", Value = "2", ValueCaption = "India" };
+            attrDao.Add(attr1);
+            attrDao.Add(attr2);
 
             int entitySize = 10000;
 
@@ -153,8 +155,8 @@ namespace AV.Development.Tests.Controllers
             MarketRoboContext context = MarketRoboContext.Create(new WebConfigConnectionStringRepository());
             IConfigurationRepository repo = new ConfigurationRepository(new WebConfigConnectionStringRepository());
             List<AttributeDataMongoDao> attrDao = new List<AttributeDataMongoDao>();
-            attrDao.Add(new AttributeDataMongoDao { ID = 1, Caption = "Fiscal Year", Value = 1, ValueCaption = "2016" });
-            attrDao.Add(new AttributeDataMongoDao { ID = 2, Caption = "Country", Value = 2, ValueCaption = "India" });
+            attrDao.Add(new AttributeDataMongoDao { AttributeID = 1, Caption = "Fiscal Year", Value = "1", ValueCaption = "2016" });
+            attrDao.Add(new AttributeDataMongoDao { AttributeID = 2, Caption = "Country", Value = "2", ValueCaption = "India" });
             EntityMongoDao newEntity = new EntityMongoDao()
             {
                 EntityId = repo.GetRandomNumber(1, 100),
@@ -225,8 +227,8 @@ namespace AV.Development.Tests.Controllers
 
             List<EntityMongoDao> entites = new List<EntityMongoDao>();
             List<AttributeDataMongoDao> attrDao = new List<AttributeDataMongoDao>();
-            attrDao.Add(new AttributeDataMongoDao { ID = 1, Caption = "Fiscal Year", Value = 1, ValueCaption = "2016" });
-            attrDao.Add(new AttributeDataMongoDao { ID = 2, Caption = "Country", Value = 2, ValueCaption = "India" });
+            attrDao.Add(new AttributeDataMongoDao { AttributeID = 1, Caption = "Fiscal Year", Value = "1", ValueCaption = "2016" });
+            attrDao.Add(new AttributeDataMongoDao { AttributeID = 2, Caption = "Country", Value = "2", ValueCaption = "India" });
 
             EntityMongoDao newEntity = new EntityMongoDao()
             {
@@ -269,7 +271,7 @@ namespace AV.Development.Tests.Controllers
             Guid systemSession = DevelopmentManagerFactory.GetSystemSession();
             IDevelopmentManager developmentManager = DevelopmentManagerFactory.GetDevelopmentManager(systemSession);
 
-          
+
             MetadataVersionMongoDao newEntity = new MetadataVersionMongoDao()
             {
                 VersionId = 1,
@@ -296,6 +298,7 @@ namespace AV.Development.Tests.Controllers
         [TestMethod]
         public void MetadataVersionDetails()
         {
+
             MarketRoboContext context = MarketRoboContext.Create(new WebConfigConnectionStringRepository());
             Task<MetadataVersionMongoDao> versionDetailTask = context.MetadataVersion("version1").Find(a => a.VersionId == 1).SingleOrDefaultAsync();
             Task.WaitAll(versionDetailTask);
