@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="BrandSystems.Marcom.Dal" namespace="BrandSystems.Marcom.Dal">
+	<class name="AV.Development.Dal.Metadata.Model.EntityTypeAttributeRelationDao,AV.Development.Dal" table="MM_EntityTypeAttributeRelation" lazy="true">
+		<id name="ID" column="ID" type="int">
+			<generator class="assigned"/>
+		</id>
+		
+		<property name="EntityTypeID" type="int">
+			<column name="EntityTypeID" not-null="true" sql-type="INTEGER"/>
+		</property>
+		<property name="AttributeID" type="int">
+			<column name="AttributeID" not-null="true" sql-type="INTEGER"/>
+		</property>
+		<property name="ValidationID" type="string">
+			<column name="ValidationID" sql-type="NVARCHAR"/>
+		</property>
+		<property name="SortOrder" type="int">
+			<column name="SortOrder" sql-type="INTEGER"/>
+		</property>
+		<property name="DefaultValue" type="string">
+			<column name="DefaultValue" sql-type="NVARCHAR"/>
+		</property>
+		<property name="InheritFromParent" type="Boolean">
+			<column name="InheritFromParent" sql-type="BIT"/>
+		</property>
+		<property name="IsReadOnly" type="Boolean">
+			<column name="IsReadOnly" sql-type="BIT"/>
+		</property>
+		<property name="ChooseFromParentOnly" type="Boolean">
+			<column name="ChooseFromParentOnly" sql-type="BIT"/>
+		</property>
+		<property name="IsValidationNeeded" type="Boolean">
+			<column name="IsValidationNeeded" sql-type="BIT"/>
+		</property>
+		<property name="Caption" type="string">
+			<column name="Caption" sql-type="NVARCHAR"/>
+		</property>
+		<property name="IsSystemDefined" type="Boolean">
+			<column name="IsSystemDefined" sql-type="BIT"/>
+		</property>
+		<property name="PlaceHolderValue" type="string">
+			<column name="PlaceHolderValue" sql-type="NVARCHAR"/>
+		</property>
+		<property name="MinValue" type="int">
+			<column name="MinValue" sql-type="INTEGER"/>
+		</property>
+		<property name="MaxValue" type="int">
+			<column name="MaxValue" sql-type="INTEGER"/>
+		</property>
+	</class>
+</hibernate-mapping>

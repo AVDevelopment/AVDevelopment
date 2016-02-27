@@ -957,6 +957,7 @@
     <Content Include="bower_components\jquery_appear\AUTHORS.txt" />
     <Content Include="bower_components\jquery_appear\jquery.appear.js" />
     <Content Include="cookiesetup.js" />
+    <Content Include="CurrentMetadataWorking.xml" />
     <Content Include="img\rsz_icd-10_icon.png" />
     <Content Include="LogFile.txt" />
     <Content Include="Logs\1.txt" />
@@ -1032,6 +1033,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\MessageHandler\HomeCinemaAuthHandler.cs" />
+    <Compile Include="Infrastructure\NormalizingRequestValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

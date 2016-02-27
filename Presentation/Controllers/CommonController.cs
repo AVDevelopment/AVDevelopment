@@ -12,6 +12,7 @@ using Development.Utility;
 using AV.Development.Core.Managers;
 using System.Linq.Expressions;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AV.Development.Web.Controllers
 {
@@ -78,6 +79,30 @@ namespace AV.Development.Web.Controllers
                 result.StatusCode = (int)HttpStatusCode.OK;
                 //result.Response = JsonConvert.SerializeObject(marcomManager.CommonManager.GetEntities(pageNo, pageSize)); //serialization sample
                 result.Response = marcomManager.CommonManager.GetEntities(pageNo, pageSize);
+            }
+            catch
+            {
+                result.StatusCode = (int)HttpStatusCode.MethodNotAllowed;
+                result.Response = 0;
+            }
+            return result;
+        }
+
+
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("GetEntities/Details")]
+        public ServiceResponse GetEntityDetail([FromBody]JObject jobj)
+        {
+            result = new ServiceResponse();
+
+            try
+            {
+                Guid systemSession = DevelopmentManagerFactory.GetSystemSession();
+                IDevelopmentManager marcomManager = DevelopmentManagerFactory.GetDevelopmentManager(systemSession);
+                result.StatusCode = (int)HttpStatusCode.OK;
+                result.Response = marcomManager.CommonManager.GetEntities(1, 20);
             }
             catch
             {

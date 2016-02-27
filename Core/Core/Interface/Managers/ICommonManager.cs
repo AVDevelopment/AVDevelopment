@@ -23,12 +23,17 @@ namespace AV.Development.Core.Interface.Managers
 
         #endregion
 
-        #region TestMethod
+        #region Methods
+
         string TestMethod();
         bool SaveError(ErrorDao _error);
 
         #region GetEntities
         IList<Entity> GetEntities(int pageNo, int pageSize);
+        #endregion
+
+        #region GetObjects
+        List<T> GetObject<T>();
         #endregion
 
         #endregion

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AV.Development.Dal.MongoDB.DatabaseObjects
 {
-    public class AttributeDataMongoDao
+    public class AttributeDataMongoDao : MongoDbObjectBase
     {
         public int ID { get; set; }
         public int TypeID { get; set; }
@@ -21,9 +21,6 @@ namespace AV.Development.Dal.MongoDB.DatabaseObjects
         public bool IsChooseFromParent { get; set; }
         public bool IsReadOnly { get; set; }
         public int SortOrder { get; set; }
-        public dynamic tree { get; set; }
-        public dynamic options { get; set; }
-        public int MinValue { get; set; }
-        public int MaxValue { get; set; }
+       
     }
 }

@@ -147,6 +147,19 @@ namespace AV.Development.Dal.MongoDB.Repositories
             context.Entities.FindOneAndDelete<EntityMongoDao>(lt => lt.EntityId == id);
         }
 
+
+        ///<summary>
+        ///Get metadata version details.
+        ///</summary>
+        public MetadataVersionMongoDao MetadataVersion(string versionCollectionName)
+        {
+
+            MarketRoboContext context = MarketRoboContext.Create(base.ConnectionStringRepository);
+            MetadataVersionMongoDao mongoDbVersion = context.MetadataVersion(versionCollectionName).Find(x => true).SingleOrDefault();
+            return mongoDbVersion;
+        }
+
+
         ///<summary>
         ///GenerateRandomEntityName
         ///</summary>

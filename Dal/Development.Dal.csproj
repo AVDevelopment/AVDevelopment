@@ -82,6 +82,7 @@
     <Compile Include="Metadata\MetadataRepository.cs" />
     <Compile Include="Metadata\Models\AttributeDao.cs" />
     <Compile Include="Metadata\Models\AttributeTypeDao.cs" />
+    <Compile Include="Metadata\Models\EntityTypeAttributeRelationDao.cs" />
     <Compile Include="Metadata\Models\EntityTypeDao.cs" />
     <Compile Include="Metadata\Models\EntityTypeFeatureDao.cs" />
     <Compile Include="Metadata\Models\EntityTypeHierarchyDao.cs" />
@@ -91,11 +92,25 @@
     <Compile Include="Metadata\Models\OptionDao.cs" />
     <Compile Include="Metadata\Models\TreeLevelDao.cs" />
     <Compile Include="Metadata\Models\TreeNodeDao.cs" />
+    <Compile Include="Metadata\Models\ValidationDao.cs" />
     <Compile Include="MongoDB\DatabaseObjects\AttributeDataMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\AttributeMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\AttributeTypeMongoDao.cs" />
     <Compile Include="MongoDB\DatabaseObjects\EntityMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\EntityTypeAttributeRelationMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\EntitytypeFeatureMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\EntityTypeHierarchyMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\EntityTypeMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\FeatureMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\MetadataVersionMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\ModuleMongoDao.cs" />
     <Compile Include="MongoDB\DatabaseObjects\MongoDbDomainBase.cs" />
     <Compile Include="MongoDB\DatabaseObjects\MongoDbObjectBase.cs" />
     <Compile Include="MongoDB\DatabaseObjects\MultiProperty.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\OptionMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\TreeLevelMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\TreeNodeMongoDao.cs" />
+    <Compile Include="MongoDB\DatabaseObjects\ValidationMongoDao.cs" />
     <Compile Include="MongoDB\Domain\Entity.cs" />
     <Compile Include="MongoDB\MarketRoboContext.cs" />
     <Compile Include="MongoDB\Repositories\ConfigurationRepository.cs" />
@@ -120,6 +135,7 @@
   <ItemGroup>
     <Content Include="Metadata\Mappings\AttributeDao.hbm.xml" />
     <Content Include="Metadata\Mappings\AttributeTypeDao.hbm.xml" />
+    <Content Include="Metadata\Mappings\EntityTypeAttributeRelationDao.hbm.xml" />
     <Content Include="Metadata\Mappings\EntityTypeDao.hbm.xml" />
     <Content Include="Metadata\Mappings\EntityTypeFeatureDao.hbm.xml" />
     <Content Include="Metadata\Mappings\EntityTypeHierarchyDao.hbm.xml" />

@@ -13,6 +13,7 @@ namespace AV.Development.Dal.MongoDB.Repositories.Interface
         IList<EntityMongoDao> GetEntitiesForTimePeriod(DateTime searchStartDateUtc, DateTime searchEndDateUtc);
         IList<EntityMongoDao> GetEntities(int pageNo, int pageSize);
         IList<Entity> GetEntities(int pageNo, int pageSize, bool sortby);
+        MetadataVersionMongoDao MetadataVersion(string versionCollectionName);
         void AddOrUpdateLoadEntites(List<EntityMongoDao> ToBeInserted = null, List<EntityMongoDao> ToBeUpdated = null);
         void DeleteById(int id);
         string GenerateRandomEntityName();

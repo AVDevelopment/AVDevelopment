@@ -258,5 +258,50 @@ namespace AV.Development.Tests.Controllers
             Assert.IsNotNull(entites[0].DbObjectId); // Test Seed worked properly or not
         }
 
+        [TestMethod]
+        public void MetadataSetup()
+        {
+            MarketRoboContext context = MarketRoboContext.Create(new WebConfigConnectionStringRepository());
+            IConfigurationRepository repo = new ConfigurationRepository(new WebConfigConnectionStringRepository());
+
+            InitializeAllDevelopmentInstances(); // initialize the persistance layer and nhibernate engine 
+
+            Guid systemSession = DevelopmentManagerFactory.GetSystemSession();
+            IDevelopmentManager developmentManager = DevelopmentManagerFactory.GetDevelopmentManager(systemSession);
+
+          
+            MetadataVersionMongoDao newEntity = new MetadataVersionMongoDao()
+            {
+                VersionId = 1,
+                VersionName = "Version1",
+                CreatedDate = DateTime.Now,
+                EntityTypes = developmentManager.CommonManager.GetObject<EntityTypeMongoDao>(),
+                EntityTypeHierarchy = developmentManager.CommonManager.GetObject<EntityTypeHierarchyMongoDao>(),
+                EntityTypeAttributeRelation = developmentManager.CommonManager.GetObject<EntityTypeAttributeRelationMongoDao>(),
+                EntityFeatures = developmentManager.CommonManager.GetObject<EntitytypeFeatureMongoDao>(),
+                Attributes = developmentManager.CommonManager.GetObject<AttributeMongoDao>(),
+                Features = developmentManager.CommonManager.GetObject<FeatureMongoDao>(),
+                Modules = developmentManager.CommonManager.GetObject<ModuleMongoDao>(),
+                Options = developmentManager.CommonManager.GetObject<OptionMongoDao>(),
+                TreeLevels = developmentManager.CommonManager.GetObject<TreeLevelMongoDao>(),
+                TreeNodes = developmentManager.CommonManager.GetObject<TreeNodeMongoDao>()
+
+            };
+            Task insertionTask = context.MetadataVersion("version1").InsertOneAsync(newEntity);
+            Task.WaitAll(insertionTask);
+
+
+        }
+
+        [TestMethod]
+        public void MetadataVersionDetails()
+        {
+            MarketRoboContext context = MarketRoboContext.Create(new WebConfigConnectionStringRepository());
+            Task<MetadataVersionMongoDao> versionDetailTask = context.MetadataVersion("version1").Find(a => a.VersionId == 1).SingleOrDefaultAsync();
+            Task.WaitAll(versionDetailTask);
+            MetadataVersionMongoDao planEntites = versionDetailTask.Result;
+
+        }
+
     }
 }

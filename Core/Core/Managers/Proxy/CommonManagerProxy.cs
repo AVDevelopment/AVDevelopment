@@ -70,6 +70,14 @@ namespace AV.Development.Core.Managers.Proxy
         }
         #endregion
 
+        #region GetObjects
+        public List<T> GetObject<T>()
+        {
+
+            return CommonManager.Instance.GetObject<T>(this);
+        }
+
+        #endregion
         #endregion
 
 

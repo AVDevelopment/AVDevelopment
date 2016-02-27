@@ -22,10 +22,11 @@ namespace AV.Development.Dal.MongoDB.Repositories
                 loadEntityDbModel.EntityId,
                 attrDao,
                 loadEntityDbModel.Name,
-                  loadEntityDbModel.UniqueKey,
-                   loadEntityDbModel.TypeName,
-                    loadEntityDbModel.TypeId,
-                loadEntityDbModel.CreationDate);
+                loadEntityDbModel.UniqueKey,
+                loadEntityDbModel.TypeName,
+                loadEntityDbModel.TypeId,
+                loadEntityDbModel.CreationDate
+                );
         }
 
         public static IEnumerable<Entity> ConvertToDomains(this IEnumerable<EntityMongoDao> loadtestDbModels)

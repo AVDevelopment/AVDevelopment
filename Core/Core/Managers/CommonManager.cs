@@ -139,6 +139,35 @@ namespace AV.Development.Core.Managers
         }
         #endregion
 
+        #region GetObjects
+        public List<T> GetObject<T>(CommonManagerProxy proxy)
+        {
+            List<T> objects = new List<T>();
+            try
+            {
+
+                using (ITransaction tx = proxy.DevelopmentManager.GetTransaction())
+                {
+                    string xmlpath = ConfigurationManager.AppSettings["DevWebPath"].ToString() + "CurrentMetadataWorking.xml";
+
+                    objects = tx.PersistenceManager.MetadataRepository.GetObject<T>(xmlpath);
+
+
+                    tx.Commit();
+                }
+
+                return objects;
+
+            }
+
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+        #endregion
+
         /// <summary>
         /// Validates the user.
         /// </summary>

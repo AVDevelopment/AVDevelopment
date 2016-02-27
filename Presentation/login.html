@@ -145,8 +145,23 @@
         function GetEntities() {
             $.ajax({
                 type: "GET",
-                url: "api/Common/GetEntities/" + currentpageNumber + "/500",
+                url: "api/Common/GetEntities/" + currentpageNumber + "/100",
                 contentType: "application/json",
+                success: OnScrollSuccess,
+                failure: function (response) {
+                    console.log(response.d);
+                }
+            });
+        }
+
+        var inputVal = { PageNo: 1, PageSize: 50 }
+
+        function GetEntitiesPost() {
+            $.ajax({
+                type: "POST",
+                url: "api/Common/GetEntities/Details",
+                contentType: "application/json",
+                data: JSON.stringify(inputVal),
                 success: OnScrollSuccess,
                 failure: function (response) {
                     console.log(response.d);
@@ -164,7 +179,7 @@
                 currentpageNumber++;
                 //GetEntities();
             }
-           
+
         }
 
 
@@ -173,6 +188,7 @@
             ShowCurrentTime();
             TestMethod();
             GetEntities();
+            GetEntitiesPost();
         });
 
         jQuery.support.cors = true;

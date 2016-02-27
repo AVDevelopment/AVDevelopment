@@ -37,9 +37,9 @@ namespace AV.Development.Dal.MongoDB
         }
 
 
-        public IMongoCollection<EntityMongoDao> EntitiesVersion(string collectionNames)
+        public IMongoCollection<MetadataVersionMongoDao> MetadataVersion(string collectionNames)
         {
-            return Database.GetCollection<EntityMongoDao>(collectionNames);
+            return Database.GetCollection<MetadataVersionMongoDao>(collectionNames);
         }
 
         public async void CollectionBsonDocument(string collectionName)
