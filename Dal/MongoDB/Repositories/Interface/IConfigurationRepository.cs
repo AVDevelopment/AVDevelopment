@@ -14,6 +14,7 @@ namespace AV.Development.Dal.MongoDB.Repositories.Interface
         IList<EntityMongoDao> GetEntities(int pageNo, int pageSize);
         IList<Entity> GetEntities(int pageNo, int pageSize, bool sortby);
         MetadataVersionMongoDao MetadataVersion(string versionCollectionName);
+        List<EntityTypeAttributeRelationMongoDao> GetEntityTypeRelationById(string collectionName, int entityTypeId, int versionID);
         void AddOrUpdateLoadEntites(List<EntityMongoDao> ToBeInserted = null, List<EntityMongoDao> ToBeUpdated = null);
         void DeleteById(int id);
         string GenerateRandomEntityName();

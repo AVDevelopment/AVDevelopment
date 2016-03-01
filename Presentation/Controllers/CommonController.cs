@@ -135,6 +135,28 @@ namespace AV.Development.Web.Controllers
             return result;
         }
 
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("GetEntityTypeAttributeRelation")]
+        public ServiceResponse GetEntityTypeAttributeRelation()
+        {
+            result = new ServiceResponse();
+
+            try
+            {
+                Guid systemSession = DevelopmentManagerFactory.GetSystemSession();
+                IDevelopmentManager marcomManager = DevelopmentManagerFactory.GetDevelopmentManager(systemSession);
+                result.StatusCode = (int)HttpStatusCode.OK;
+                result.Response = marcomManager.CommonManager.GetEntityTypeRelationById("version1", 63, 1);
+            }
+            catch
+            {
+                result.StatusCode = (int)HttpStatusCode.MethodNotAllowed;
+                result.Response = 0;
+            }
+            return result;
+        }
+
 
     }
 

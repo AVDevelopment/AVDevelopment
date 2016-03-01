@@ -206,6 +206,33 @@ namespace AV.Development.Core.Managers
 
         }
 
+        /// <summary>
+        /// Get EntityType Relation based on EntitytypeId
+        /// </summary>
+        public List<EntityTypeAttributeRelationMongoDao> GetEntityTypeRelationById(CommonManagerProxy proxy, string collectionName, int entityTypeId, int versionID)
+        {
+            List<EntityTypeAttributeRelationMongoDao> lst = new List<EntityTypeAttributeRelationMongoDao>();
+
+            try
+            {
+
+                using (ITransaction tx = proxy.DevelopmentManager.GetTransaction())
+                {
+
+                    lst = tx.PersistenceManager.ConfigurationRepository.GetEntityTypeRelationById(collectionName, entityTypeId, versionID);
+                    tx.Commit();
+                }
+
+                return lst;
+
+            }
+
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         #endregion
 
         #region TestMethod

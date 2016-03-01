@@ -40,6 +40,12 @@ namespace AV.Development.Core.Interface.Managers
         List<T> GetObject<T>(string mongoVersion);
         #endregion
 
+        /// <summary>
+        /// Get EntityType Relation based on EntitytypeId
+        /// </summary>
+        List<EntityTypeAttributeRelationMongoDao> GetEntityTypeRelationById(string collectionName, int entityTypeId, int versionID);
+       
+
         #endregion
 
     }

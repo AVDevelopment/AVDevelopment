@@ -137,6 +137,7 @@
                 failure: function (response) {
                     console.log(response.d);
                 }
+
             });
         }
 
@@ -145,9 +146,9 @@
         function GetEntities() {
             $.ajax({
                 type: "GET",
-                url: "api/Common/GetEntities/" + currentpageNumber + "/100",
+                url: "api/Common/GetEntities/" + currentpageNumber + "/50",
                 contentType: "application/json",
-                success: OnScrollSuccess,
+                success: OnScrollSuccess1,
                 failure: function (response) {
                     console.log(response.d);
                 }
@@ -181,11 +182,32 @@
             });
         }
 
+        function GetEntityTypeRelation() {
+            $.ajax({
+                type: "GET",
+                url: "api/Common/GetEntityTypeAttributeRelation",
+                contentType: "application/json",
+                success: OnScrollSuccess,
+                failure: function (response) {
+                    console.log(response.d);
+                }
+            });
+        }
+
         function OnSuccess(response) {
             console.log(response.Response);
         }
 
         function OnScrollSuccess(response) {
+            console.log(response.Response);
+            if (response.Response.length > 0) {
+                currentpageNumber++;
+                //GetEntities();
+            }
+
+        }
+
+        function OnScrollSuccess1(response) {
             console.log(response.Response);
             if (response.Response.length > 0) {
                 currentpageNumber++;
@@ -202,6 +224,7 @@
             GetEntities();
             GetEntitiesPost();
             GetEntityTypes();
+            GetEntityTypeRelation();
         });
 
         jQuery.support.cors = true;

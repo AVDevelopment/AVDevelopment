@@ -28,6 +28,7 @@ namespace AV.Development.Dal.MongoDB
                 _loadTestingContext.Client = new MongoClient(connectionString);
                 _loadTestingContext.Database = _loadTestingContext.Client.GetDatabase(_databaseName);
             }
+           
             return _loadTestingContext;
         }
 

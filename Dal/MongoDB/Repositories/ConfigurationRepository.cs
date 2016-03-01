@@ -21,6 +21,7 @@ using MongoDB.Driver.Builders;
 using AV.Development.Dal.MongoDB.Domain;
 using System.Threading.Tasks;
 using AV.Development.Dal.Metadata.Model;
+using System.Collections;
 
 namespace AV.Development.Dal.MongoDB.Repositories
 {
@@ -71,7 +72,7 @@ namespace AV.Development.Dal.MongoDB.Repositories
             var sort = builder.Ascending(x => x.EntityId).Descending(x => x.CreationDate);
 
             MarketRoboContext context = MarketRoboContext.Create(base.ConnectionStringRepository);
-            List<EntityMongoDao> mongoDbLoadEntites = context.Entities.Find(x => true).Sort(sort).Skip(skipCount).Limit(pageSize)
+            List<EntityMongoDao> mongoDbLoadEntites = context.Entities.Find(x => true).Sort(sort).SortBy(x => x.Name).ThenByDescending(x => x.EntityId).ThenByDescending(x => x.CreationDate).Skip(skipCount).Limit(pageSize)
                 .ToList();
 
             IList<Entity> entitesLst = mongoDbLoadEntites.ConvertToDomains().ToList();
@@ -190,6 +191,11 @@ namespace AV.Development.Dal.MongoDB.Repositories
                     obj = versionDetail.EntityTypes.Cast<T>().ToList();
 
                 }
+                if (typeof(T).Name == "EntityTypeAttributeRelationMongoDao")
+                {
+                    obj = versionDetail.EntityTypeAttributeRelation.Cast<T>().ToList();
+
+                }
             }
             catch
             {
@@ -197,6 +203,37 @@ namespace AV.Development.Dal.MongoDB.Repositories
             }
 
             return obj;
+        }
+
+        /// <summary>
+        /// Get EntityType Relation based on EntitytypeId
+        /// </summary>
+        public List<EntityTypeAttributeRelationMongoDao> GetEntityTypeRelationById(string collectionName, int entityTypeId, int versionID)
+        {
+            List<EntityTypeAttributeRelationMongoDao> result = new List<EntityTypeAttributeRelationMongoDao>();
+            try
+            {
+                MarketRoboContext context = MarketRoboContext.Create(base.ConnectionStringRepository);
+                Task<MetadataVersionMongoDao> versionWithBuilderTask = context.MetadataVersion(collectionName)
+                 .Find(Builders<MetadataVersionMongoDao>.Filter.Eq<int>(a => a.VersionId, versionID)).FirstOrDefaultAsync();
+                Task.WaitAll(versionWithBuilderTask);
+                MetadataVersionMongoDao planEntitesWithBuilder = versionWithBuilderTask.Result;
+                result = planEntitesWithBuilder.EntityTypeAttributeRelation.Where(a => a.EntityTypeID == entityTypeId).ToList();
+
+                //var tags1 = context.MetadataVersion(collectionName).Aggregate()
+                //.Project(x => new { Tags = x.EntityTypes })
+                //.Unwind(x => x.Tags)
+                //.ToList();
+
+
+            }
+            catch
+            {
+
+            }
+
+            return result;
+
         }
 
 

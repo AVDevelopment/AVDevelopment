@@ -86,6 +86,14 @@ namespace AV.Development.Core.Managers.Proxy
         }
         #endregion
 
+        /// <summary>
+        /// Get EntityType Relation based on EntitytypeId
+        /// </summary>
+        public List<EntityTypeAttributeRelationMongoDao> GetEntityTypeRelationById(string collectionName, int entitytypeId, int versionID)
+        {
+            return CommonManager.Instance.GetEntityTypeRelationById(this, collectionName, entitytypeId, versionID);
+        }
+
         #endregion
 
 

@@ -135,6 +135,20 @@ namespace AV.Development.Tests.Controllers
             if (singleEntityById != null)
                 Debug.WriteLine(singleEntityById.TypeName);
 
+
+            var findFluentCol = context.MetadataVersion("version1").Find(f => f.VersionId == 1 && f.EntityTypeAttributeRelation.Any(fb => fb.EntityTypeID == 63)).ToList();
+            var findFluent = context.MetadataVersion("version1").Find(Builders<MetadataVersionMongoDao>.Filter.ElemMatch(foo => foo.EntityTypeAttributeRelation, foobar => foobar.EntityTypeID == 63)).ToList();
+            var condition = Builders<MetadataVersionMongoDao>.Filter.Eq(p => p.VersionId, 1);
+            var fields = Builders<MetadataVersionMongoDao>.Projection.Include(p => p.EntityTypeAttributeRelation);
+            var result = context.MetadataVersion("version1").Find(condition).Project<EntityTypeAttributeRelationMongoDao>(fields).ToList();
+
+            var dateQueryBuilder = Builders<EntityTypeAttributeRelationMongoDao>.Filter;
+            var startDateBeforeSearchStartFilter = dateQueryBuilder.Eq<int>(l => l.EntityTypeID, 1);
+            var dateQueryBuilder1 = Builders<MetadataVersionMongoDao>.Filter;
+            var startDateBeforeSearchStartFilter1 = dateQueryBuilder1.ElemMatch(p => p.EntityTypeAttributeRelation, startDateBeforeSearchStartFilter);
+            var mongoDbLoadtestsInSearchPeriod = context.MetadataVersion("version1").Find(startDateBeforeSearchStartFilter1)
+            .ToList();
+
             Task<List<EntityMongoDao>> planEntitiesWithBuilderTask = context.Entities
                 .Find(Builders<EntityMongoDao>.Filter.Eq<string>(a => a.TypeName, "Plan")).ToListAsync();
             Task.WaitAll(planEntitiesWithBuilderTask);
