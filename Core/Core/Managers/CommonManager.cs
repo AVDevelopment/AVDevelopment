@@ -218,7 +218,6 @@ namespace AV.Development.Core.Managers
 
                 using (ITransaction tx = proxy.DevelopmentManager.GetTransaction())
                 {
-
                     lst = tx.PersistenceManager.ConfigurationRepository.GetEntityTypeRelationById(collectionName, entityTypeId, versionID);
                     tx.Commit();
                 }
@@ -232,6 +231,7 @@ namespace AV.Development.Core.Managers
                 return null;
             }
         }
+
 
         #endregion
 

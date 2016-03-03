@@ -16,7 +16,11 @@ using AV.Development.Dal.MongoDB.Repositories;
 using AV.Development.Dal.MongoDB.Repositories.Interface;
 using Development.Utility;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
+using System.Linq.Expressions;
+using System.Reflection;
 
 
 
@@ -112,6 +116,43 @@ namespace AV.Development.Tests.Controllers
             }
 
             Assert.AreNotEqual(0, dbEntites.Count); // Test that find worked properly or not
+        }
+
+        [TestMethod]
+        public void TestWithMatchGroup()
+        {
+
+            MarketRoboContext context = MarketRoboContext.Create(new WebConfigConnectionStringRepository());
+            Task<List<EntityMongoDao>> dbEntitiesTask = context.Entities.Find(x => true).ToListAsync();
+            Task.WaitAll(dbEntitiesTask);
+
+            var collection = context.MetadataVersion("version1");
+            var aggregate = collection.Aggregate()
+                .Match(new BsonDocument { { "VersionId", 1 } })
+                .Unwind(x => x.EntityTypes)
+                .Match(new BsonDocument { { "EntityTypes.EntityTypeId", new BsonDocument { { "$gt", 138 } } } })
+                .Group(new BsonDocument { { "_id", "$_id" }, { "list", new BsonDocument { { "$push", "$EntityTypes" } } } });
+            var results = aggregate.ToList();
+
+            var aggregate1 = collection.Aggregate()
+                .Match(new BsonDocument { { "VersionId", 1 } })
+                .Unwind(x => x.EntityTypes)
+                .Match(new BsonDocument { { "EntityTypes.EntityTypeId", new BsonDocument { { "$gt", 1 } } } })
+                .Group(new BsonDocument { { "_id", "$_id" }, { "list", new BsonDocument { { "$push", "$EntityTypes" } } } }).FirstOrDefault();
+
+            BsonValue dimVal1 = aggregate1["list"];
+            List<EntityTypeMongoDao> d = BsonSerializer.Deserialize<List<EntityTypeMongoDao>>(dimVal1.ToJson());
+
+            var aggregate2 = context.MetadataVersion("version1").Aggregate()
+            .Match(new BsonDocument { { "VersionId", 1 } })
+            .Unwind(x => x.EntityTypeAttributeRelation)
+            .Match(new BsonDocument { { "EntityTypeAttributeRelation.EntityTypeID", new BsonDocument { { "$eq", 138 } } } })
+            .Group(new BsonDocument { { "_id", "$_id" }, { "list", new BsonDocument { { "$push", "$EntityTypeAttributeRelation" } } } }).FirstOrDefault();
+            BsonValue dimVal = aggregate2["list"];
+            var result2 = BsonSerializer.Deserialize<List<EntityTypeAttributeRelationMongoDao>>(dimVal.ToJson());
+
+
+
         }
 
         [TestMethod]
@@ -318,6 +359,68 @@ namespace AV.Development.Tests.Controllers
             Task.WaitAll(versionDetailTask);
             MetadataVersionMongoDao planEntites = versionDetailTask.Result;
 
+        }
+
+        [TestMethod]
+        public void SeacrhWithSortPropertyName()
+        {
+            int pageNo = 1, pageSize = 20;
+            int skipCount = (pageNo - 1) * pageSize;
+            string propertyInfo = GetPropertyInfo(new EntityMongoDao(), u => u.EntityId).Name;
+
+            var builder = Builders<EntityMongoDao>.Sort;
+            var sort = builder.Ascending(propertyInfo);
+
+            MarketRoboContext context = MarketRoboContext.Create(new WebConfigConnectionStringRepository());
+            //List<EntityMongoDao> mongoDbLoadEntites = context.Entities.Find(x => true).Sort(sort).SortBy(x => x.Name).ThenByDescending(x => x.EntityId).ThenByDescending(x => x.CreationDate).Skip(skipCount).Limit(pageSize)
+            //    .ToList();
+            List<EntityMongoDao> mongoDbLoadEntites = context.Entities.Find(x => true).Sort(sort).Skip(skipCount).Limit(pageSize)
+               .ToList();
+        }
+
+
+        public PropertyInfo GetPropertyInfo<TSource, TProperty>(
+    TSource source,
+    Expression<Func<TSource, TProperty>> propertyLambda)
+        {
+
+            PropertyInfo propInfo = null;
+            try
+            {
+
+                Type type = typeof(TSource);
+                MemberExpression member = propertyLambda.Body as MemberExpression;
+                if (member == null)
+                {
+                    //throw new ArgumentException(string.Format(
+                    //    "Expression '{0}' refers to a method, not a property.",
+                    //    propertyLambda.ToString()));
+                }
+
+
+                propInfo = member.Member as PropertyInfo;
+                if (propInfo == null)
+                {
+                    //throw new ArgumentException(string.Format(
+                    //    "Expression '{0}' refers to a field, not a property.",
+                    //    propertyLambda.ToString()));
+                }
+
+                if (type != propInfo.ReflectedType &&
+                    !type.IsSubclassOf(propInfo.ReflectedType))
+                {
+                    //throw new ArgumentException(string.Format(
+                    //    "Expresion '{0}' refers to a property that is not from type {1}.",
+                    //    propertyLambda.ToString(),
+                    //    type));
+                }
+            }
+            catch
+            {
+
+            }
+
+            return propInfo;
         }
 
     }

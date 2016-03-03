@@ -22,6 +22,8 @@ using AV.Development.Dal.MongoDB.Domain;
 using System.Threading.Tasks;
 using AV.Development.Dal.Metadata.Model;
 using System.Collections;
+using MongoDB.Bson.Serialization;
+
 
 namespace AV.Development.Dal.MongoDB.Repositories
 {
@@ -77,9 +79,9 @@ namespace AV.Development.Dal.MongoDB.Repositories
 
             IList<Entity> entitesLst = mongoDbLoadEntites.ConvertToDomains().ToList();
 
-
             return entitesLst;
         }
+
 
         ///<summary>
         ///Get all entites between creation dates.
@@ -110,6 +112,7 @@ namespace AV.Development.Dal.MongoDB.Repositories
 
             return mongoDbLoadtestsInSearchPeriod;
         }
+
 
         ///<summary>
         ///Add or update entities
@@ -172,6 +175,7 @@ namespace AV.Development.Dal.MongoDB.Repositories
             return this.GenRandomLastName() + " " + this.GenRandomFirstName();
         }
 
+
         /// <summary>
         /// Get MetaData Objects
         /// </summary>
@@ -214,18 +218,126 @@ namespace AV.Development.Dal.MongoDB.Repositories
             try
             {
                 MarketRoboContext context = MarketRoboContext.Create(base.ConnectionStringRepository);
-                Task<MetadataVersionMongoDao> versionWithBuilderTask = context.MetadataVersion(collectionName)
-                 .Find(Builders<MetadataVersionMongoDao>.Filter.Eq<int>(a => a.VersionId, versionID)).FirstOrDefaultAsync();
-                Task.WaitAll(versionWithBuilderTask);
-                MetadataVersionMongoDao planEntitesWithBuilder = versionWithBuilderTask.Result;
+                MetadataVersionMongoDao versionWithBuilderTask = context.MetadataVersion(collectionName)
+                 .Find(Builders<MetadataVersionMongoDao>.Filter.Eq<int>(a => a.VersionId, versionID)).FirstOrDefault();
+                MetadataVersionMongoDao planEntitesWithBuilder = versionWithBuilderTask;
                 result = planEntitesWithBuilder.EntityTypeAttributeRelation.Where(a => a.EntityTypeID == entityTypeId).ToList();
 
-                //var tags1 = context.MetadataVersion(collectionName).Aggregate()
-                //.Project(x => new { Tags = x.EntityTypes })
-                //.Unwind(x => x.Tags)
-                //.ToList();
+                EntityTypeMongoDao entityTypeObj = new EntityTypeMongoDao();
+                entityTypeObj.EntityTypeId = -1;
+                entityTypeObj.Caption = GenRandomFirstName() + " " + GenRandomLastName();
+
+                InsertUpdateEntityType(entityTypeObj);
+
+            }
+            catch
+            {
+
+            }
+
+            return result;
+
+        }
+
+        /// <summary>
+        /// Get current metadata version details
+        /// </summary>
+        /// <returns>MetadataVersionMongoDao</returns>
+        public MetadataVersionMongoDao getCurrentVersion()
+        {
+            MetadataVersionMongoDao currentVersion = new MetadataVersionMongoDao();
+            try
+            {
+                MarketRoboContext context = MarketRoboContext.Create(base.ConnectionStringRepository);
+                currentVersion = context.MetadataVersion("version1")
+                .Find(Builders<MetadataVersionMongoDao>.Filter.Eq<int>(a => a.VersionId, 1)).FirstOrDefault();
+            }
+            catch
+            {
+
+            }
+            return currentVersion;
+        }
+
+        /// <summary>
+        /// Insert or Update Entity Type 
+        /// </summary>
+        /// <param name="entityTypeObj"></param>
+        /// <returns>TypeId</returns>
+        public int InsertUpdateEntityType(EntityTypeMongoDao entityTypeObj)
+        {
+
+            try
+            {
+                MarketRoboContext context = MarketRoboContext.Create(base.ConnectionStringRepository);
+                MetadataVersionMongoDao metadataVersion = getCurrentVersion();
+                EntityTypeMongoDao existType;
+                existType = metadataVersion.EntityTypes.Where(a => a.EntityTypeId == entityTypeObj.EntityTypeId).FirstOrDefault();
+                if (existType == null)
+                {
+                    //Insert using native library concept
+
+                    var filter = Builders<MetadataVersionMongoDao>.Filter.Eq(p => p.VersionId, 1);
+                    var updateset = Update.AddToSet("EntityTypes", entityTypeObj.ToBsonDocument());
+                    var result1 = context.MetadataVersion("version1").UpdateOne(filter, updateset.ToBsonDocument());
+
+                }
+                else
+                {
+                    //update using native library index concept  // since this is not secure to perform like this
+                    var filter = Builders<MetadataVersionMongoDao>.Filter.Eq(p => p.VersionId, 1);
+                    var types = context.MetadataVersion("version1").Find(x => true).FirstOrDefault();
+
+                    int index = types.EntityTypes.FindIndex(a => a.EntityTypeId == existType.EntityTypeId);
+                    var update = Update.Set("EntityTypes." + index + ".Caption", GenRandomFirstName() + " " + GenRandomLastName());
+                    context.MetadataVersion("version1").UpdateOne(filter, update.ToBsonDocument());
+                    var parent = context.MetadataVersion("version1").AsQueryable().FirstOrDefault(p => p.VersionId == 1);
 
 
+                    ////add new entitytype into sub document in the collection in LINQ way
+                    //parent.EntityTypes.Add(new EntityTypeMongoDao { DbObjectId = ObjectId.GenerateNewId(), Caption = GenRandomFirstName() + " " + GenRandomLastName(), ShortDescription = GenRandomFirstName() + " " + GenRandomLastName() });
+
+                    if (parent != null)
+                    {
+                        var fooList = parent.EntityTypes.Where(f => f.EntityTypeId == existType.EntityTypeId);
+                        foreach (var foo in fooList)
+                        {
+                            foo.ShortDescription = foo.Caption;
+                        }
+                    }
+
+                    context.MetadataVersion("version1").ReplaceOne(filter, parent);
+
+                }
+
+
+            }
+            catch
+            {
+
+            }
+
+            return 0;
+
+        }
+
+
+        /// <summary>
+        /// Get EntityType Relation based on EntitytypeId
+        /// </summary>
+        public List<EntityTypeAttributeRelationMongoDao> GetEntityTypeRelationByIdMatch(string collectionName, int entityTypeId, int versionID)
+        {
+            List<EntityTypeAttributeRelationMongoDao> result = new List<EntityTypeAttributeRelationMongoDao>();
+            try
+            {
+                MarketRoboContext context = MarketRoboContext.Create(base.ConnectionStringRepository);
+                var aggregate1 = context.MetadataVersion(collectionName).Aggregate()
+               .Match(new BsonDocument { { "VersionId", versionID } })
+               .Unwind(x => x.EntityTypeAttributeRelation)
+               .Match(new BsonDocument { { "EntityTypeAttributeRelation.EntityTypeID", new BsonDocument { { "$eq", entityTypeId } } } })
+               .Group(new BsonDocument { { "_id", "$_id" }, { "list", new BsonDocument { { "$push", "$EntityTypeAttributeRelation" } } } }).FirstOrDefault();
+                BsonValue dimVal = aggregate1["list"];
+                result = BsonSerializer.Deserialize<List<EntityTypeAttributeRelationMongoDao>>(dimVal.ToJson());
             }
             catch
             {

@@ -224,5 +224,74 @@ namespace AV.Development.Dal.Metadata
 
         }
 
+        public int GetMaxId<T>()
+        {
+            int maxID = 0;
+            try
+            {
+                if (typeof(T).Name == "EntityTypeMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_EntityType_seq;");
+                }
+
+                else if (typeof(T).Name == "FeatureMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_Feature_seq;");
+                }
+
+                else if (typeof(T).Name == "ModuleMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_Module_seq;");
+                }
+
+                else if (typeof(T).Name == "EntitytypeFeatureMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_EntitytypeFeature_seq;");
+                }
+
+                else if (typeof(T).Name == "EntityTypeAttributeRelationMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_EntityTypeAttributeRelation_seq;");
+                }
+                else if (typeof(T).Name == "AttributeTypeMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_AttributeType_seq;");
+                }
+                else if (typeof(T).Name == "AttributeMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_Attribute_seq;");
+                }
+                else if (typeof(T).Name == "OptionMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_Option_seq;");
+                }
+
+                else if (typeof(T).Name == "TreeLevelMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_TreeLevel_seq;");
+                }
+                else if (typeof(T).Name == "TreeNodeMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_TreeNode_seq;");
+                }
+
+                else if (typeof(T).Name == "ValidationMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_Validation_seq;");
+                }
+                else if (typeof(T).Name == "EntityTypeHierarchyMongoDao")
+                {
+                    maxID = PersistenceManager.Instance.MetadataRepository.GetNextValueOfSequence("SELECT NEXT VALUE FOR MM_EntityTypeHierarchy_seq;");
+                }
+            }
+
+            catch
+            {
+
+            }
+
+            return maxID;
+        }
+
     }
 }

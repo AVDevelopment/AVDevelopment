@@ -418,6 +418,18 @@ namespace AV.Development.Dal.Base
             return result;
         }
 
+        public int GetNextValueOfSequence(string strQuery)
+        {
+            ISession session = _sessionFactory.GetCurrentSession();
+            session.CacheMode = CacheMode.Ignore;
+            session.FlushMode = FlushMode.Commit;
+            var query = session.CreateSQLQuery(strQuery);
+            // Access NHibernate to return the next value of the sequence.
+            int result = Convert.ToInt32(query.UniqueResult<Int64>());
+            return result;
+
+        }
+
 
         #endregion
 
