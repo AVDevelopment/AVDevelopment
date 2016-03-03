@@ -17,6 +17,13 @@ namespace AV.Development.Dal.MongoDB.Repositories.Interface
         List<EntityTypeAttributeRelationMongoDao> GetEntityTypeRelationById(string collectionName, int entityTypeId, int versionID);
         void AddOrUpdateLoadEntites(List<EntityMongoDao> ToBeInserted = null, List<EntityMongoDao> ToBeUpdated = null);
         void DeleteById(int id);
+
+        int SaveObject<T>(T saveObj, string versionName);
+        bool SaveObject<T>(List<T> listObj, string versionName);
+
+        bool DeleteObject<T>(T deleteObj, string versionName);
+        bool DeleteObject<T>(List<T> deleteArr, string versionName);
+
         string GenerateRandomEntityName();
         int GetRandomNumber(int min, int max);
         string GenRandomEntityTypeName();
